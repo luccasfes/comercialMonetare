@@ -1,41 +1,142 @@
-
-    .sidebar-logo {
-        width: 150px;  /* ajuste o valor conforme necessário */
-        height: auto;  /* mantém a proporção */
-    }
-
-    .sidebar-logo {
-        width: 150px;  /* Ajuste conforme necessário */
-        height: auto;
-    }
-
-    .nav-item {
-        margin-top: 20px; /* Espaçamento acima do ícone do usuário */
-    }
-
-    .sidebar-text {
-        display: block; /* Garante que o texto fique em uma linha separada */
-        margin-top: 5px; /* Espaçamento entre o ícone e o texto */
-    }
-
-    .custom-navbar {
-        background-color: #ff7a27 !important; /* Cor de fundo */
-        padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
-    }
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-    
-    /* Estilos gerais para dispositivos móveis */
-body {
-    font-size: 14px; /* Tamanho da fonte base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Para telas maiores que 768px (tablets e desktops) */
+body {
+    font-size: 14px; /* Tamanho base */
+}
+
+.sidebar-logo {
+    width: 150px;  /* Ajuste o valor conforme necessário */
+    height: auto;  /* Mantém a proporção */
+}
+
+.nav-item {
+    margin-top: 20px; /* Espaçamento acima do ícone do usuário */
+}
+
+.sidebar-text {
+    display: block; /* Garante que o texto fique em uma linha separada */
+    margin-top: 5px; /* Espaçamento entre o ícone e o texto */
+}
+
+.custom-navbar {
+    background-color: #ff7a27 !important; /* Cor de fundo */
+    padding: 0.5rem 1rem; /* Ajuste o padding conforme necessário */
+}
+
+.dashboard {
+    max-width: 80%; /* Usar max-width para responsividade */
+    margin: 20px auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: #28a745;
+}
+
+.ranking-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ranking-header h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.ranking-header p {
+    font-size: 1.2rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.filters select {
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.ranking {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste para responsividade */
+    gap: 20px;
+}
+
+.ranking-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.ranking-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.ranking-box ul {
+    list-style: none;
+}
+
+.ranking-box li {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.ranking-box strong {
+    font-size: 1.2rem;
+}
+
+.ranking-box span {
+    color: #28a745;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.card {
+    max-width: 300px; /* Ajuste conforme necessário */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Para que o texto não quebre em várias linhas */
+}
+
+.card .list-unstyled {
+    padding: 0;
+}
+
+.card img {
+    border-radius: 50%; /* Para manter a imagem redonda */
+}
+
+.card strong {
+    display: block; /* Faz com que o nome ocupe toda a linha */
+    overflow: hidden; /* Garante que o texto não ultrapasse o card */
+    text-overflow: ellipsis; /* Adiciona reticências para textos longos */
+    white-space: nowrap; /* Impede quebra de linha */
+    font-size: 1rem; /* Ajuste o tamanho da fonte */
+}
+
+.card span {
+    font-size: 0.9rem; /* Diminui o tamanho da fonte do valor */
+    display: block; /* Faz com que o valor ocupe toda a linha */
+}
+
+/* Media Queries */
 @media (min-width: 768px) {
     body {
         font-size: 16px; 
@@ -44,134 +145,11 @@ body {
     .dashboard {
         width: 70%; 
     }
-
-    .ranking {
-        grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
-    }
 }
 
-/* Para telas maiores que 1200px (desktops grandes) */
 @media (min-width: 1200px) {
     .dashboard {
         width: 60%; /* Aumenta ainda mais a largura do dashboard */
     }
-
-    .ranking {
-        grid-template-columns: repeat(4, 1fr); /* Mantém quatro colunas */
-    }
-
-    .card {
-        max-width: 300px; /* Ajusta a largura do card */
-    }
 }
 
-    
-    .dashboard {
-        width: 80%;
-        margin: 20px auto;
-    }
-    
-    h1 {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
-    
-    h1 span {
-        color: #28a745;
-    }
-    
-    .ranking-header {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    
-    .ranking-header h2 {
-        font-size: 1.5rem;
-        font-weight: normal;
-    }
-    
-    .ranking-header p {
-        font-size: 1.2rem;
-    }
-    
-    .filters {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-    
-    .filters select {
-        margin: 0 10px;
-        padding: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
-    
-    .ranking {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-    
-    .ranking-box {
-        background-color: white;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-    
-    .ranking-box h3 {
-        font-size: 1.2rem;
-        margin-bottom: 15px;
-    }
-    
-    .ranking-box ul {
-        list-style: none;
-    }
-    
-    .ranking-box li {
-        margin-bottom: 15px;
-        font-size: 1rem;
-    }
-    
-    .ranking-box strong {
-        font-size: 1.2rem;
-    }
-    
-    .ranking-box span {
-        color: #28a745;
-        font-weight: bold;
-        margin-left: 10px;
-    }
-
-
-    .card {
-        max-width: 300px; /* Ajuste conforme necessário */
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap; /* Para que o texto não quebre em várias linhas */
-    }
-    
-    .card .list-unstyled {
-        padding: 0;
-    }
-    
-    .card img {
-        border-radius: 50%; /* Para manter a imagem redonda */
-    }
-    
-    .card strong {
-        display: block; /* Faz com que o nome ocupe toda a linha */
-        overflow: hidden; /* Garante que o texto não ultrapasse o card */
-        text-overflow: ellipsis; /* Adiciona reticências para textos longos */
-        white-space: nowrap; /* Impede quebra de linha */
-        font-size: 14px; /* Diminui o tamanho da fonte */
-    }
-    
-    .card span {
-        font-size: 12px; /* Diminui o tamanho da fonte do valor */
-        display: block; /* Faz com que o valor ocupe toda a linha */
-    }
-    
