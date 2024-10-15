@@ -1,174 +1,1280 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Comercial</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<html lang="en">
 
-<div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Dashboard <strong style="color: black;">COMERCIAL</strong></h1>
-    </div>
-    <hr>
-    
-    <div class="row align-items-center mb-4">
-        <div class="col-4">
-            <h5>Ranking em Contratos <strong style="color: black;">Emitidos</strong></h5>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css">
+  <link rel="stylesheet" href="script.js">
+
+  <title>Comercial Monetare</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet" />
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #003a5d">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex flex-column align-items-center justify-content-center" href="index.html">
+        <div class="logo-circle">
+          <!-- Tamanho do círculo -->
+          <br>
+          <br>
+          <img src="./img/lgmonetare.png" alt="Logo" class="sidebar-logo"
+            style="width: 100px; height: auto; margin-bottom: 10px;" />
+
+          <br>
+          <!-- Tamanho da logo -->
         </div>
-        <div class="col-8">
-            <div class="filters d-flex justify-content-end">
+        <!-- HTML -->
+        <img id="profileImage" class="img-profile rounded-circle" src="img/undraw_profile.svg" />
+
+        <!-- CSS -->
+        <style>
+          #profileImage {
+            width: 50px;
+            /* Defina a largura desejada */
+            height: auto;
+            /* Mantém a proporção da imagem */
+          }
+        </style>
+
+        <div class="sidebar-brand-text mx-3 text-white" style="font-size: 0.53rem; margin-top: 10px;">
+          Soluções Financeiras
+          <span class="mr-2 d-none d-lg-inline text-white">
+            <i class="fas fa-fw fa-cog"></i>
+          </span>
+          <hr class="sidebar-divider my-0" />
+        </div>
+      </a>
+      <br />
+      <!-- Divider -->
+      <br>
+      <!-- <hr class="sidebar-divider my-0" /> -->
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePainéis"
+          aria-expanded="true" aria-controls="collapsePainéis">
+          <i class="bi bi-grid"></i>
+          <span>Painéis</span>
+        </a>
+        <div id="collapsePainéis" class="collapse" aria-labelledby="headingPainéis" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="buttons.html">Produção</a>
+            <a class="collapse-item" href="index.html">Comercial</a>
+            <a class="collapse-item" href="cards.html">Operacional</a>
+            <a class="collapse-item" href="cards.html">Parceiros</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <!-- <hr class="sidebar-divider" /> -->
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseRelatórios"
+          aria-expanded="true" aria-controls="collapseRelatórios">
+          <i class="bi bi-layout-text-sidebar"></i>
+          <span>Relatórios</span>
+        </a>
+        <div id="collapseRelatórios" class="collapse" aria-labelledby="headingRelatórios"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="buttons.html">
+              <i class="bi bi-bookmark"></i> Resultados Globais
+            </a>
+            <a class="collapse-item" href="cards.html">
+              <i class="bi bi-bookmark"></i> Metas
+            </a>
+
+          </div>
+        </div>
+      </li>
+
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+
+      <!-- Divider -->
+      <!-- <hr class="sidebar-divider" /> -->
+
+      <!-- Heading -->
+      <!-- <div class="sidebar-heading">Addons</div> -->
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+          aria-controls="collapsePages">
+          <i class="bi bi-graph-up"></i>
+          <span>Gráfico</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="collapse-inner rounded" style="background-color: #003a5d; padding: 0.5rem;">
+
+
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDesenvolvimento"
+          aria-expanded="true" aria-controls="collapseDesenvolvimento">
+          <i class="bi bi-sliders2-vertical"></i>
+          <span>Desenvolvimento</span>
+        </a>
+        <div id="collapseDesenvolvimento" class="collapse" aria-labelledby="headingDesenvolvimento"
+          data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded" style="background-color: #003a5d;">
+            <a class="collapse-item" href="pagina1.html">
+              <i class="bi bi-house"></i></i> Projeto 1
+            </a>
+            <a class="collapse-item" href="pagina2.html">
+              <i class="bi bi-file-earmark-text"></i> Projeto 2
+            </a>
+            <!-- Adicione mais itens de colapso conforme necessário -->
+          </div>
+        </div>
+      </li>
+
+
+      <!-- Nav Item - Tables -->
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li> -->
+
+      <!-- Divider -->
+      <!-- <hr class="sidebar-divider d-none d-md-block" /> -->
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+      <!-- Sidebar Message -->
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light custom-navbar topbar mb-4 static-top shadow">
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="p-link layout-menu-button">
+            <span class="pi pi-bars"></span>
+          </button>
+
+          <!-- Topbar Search -->
+
+          <!-- Seu ícone -->
+
+
+          <!-- Botão para o sidebar -->
+          <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+          </div>
+
+          <style>
+            /* Adiciona efeito ao passar o mouse */
+            #toggleIcon:hover {
+              color: #ccc;
+              /* Muda a cor do ícone ao passar o mouse */
+            }
+          </style>
+
+          <script>
+            // Seleciona o ícone e o botão do sidebar
+            const toggleIcon = document.getElementById('toggleIcon');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+
+            // Adiciona um evento de clique ao ícone
+            toggleIcon.addEventListener('click', function () {
+              sidebarToggle.click(); // Simula o clique no botão do sidebar
+            });
+          </script>
+          <!-- Aqui está o search é util mas vou deixar comentado -->
+          <!-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+                aria-label="Search" aria-describedby="basic-addon2" />
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form> -->
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-fw fa-cog"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-white" style="font-size: 1.7rem;">
+                  <i class="fas fa-fw fa-cog"></i>
+                </span>
+                <!-- Aqui seria a imagem de perfil do user logado -->
+                <!-- <img class="img-profile rounded-circle" src="img/undraw_profile.svg" /> -->
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Logout
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid my-container">
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard <strong style="color: black;">COMERCIAL</strong></h1>
+          </div>
+          <hr>
+          <!-- Content Row -->
+          <div class="row align-items-center mb-4">
+            <div class="col-4">
+              <h5>Ranking em Contratos <strong style="color: black;">Emitidos</strong>
+                <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
+                <h6 class="total-propostas">propostas com Volume Total de</h6>
+                <h6 class="volume-total"></h6>
+
+              </h5>
+            </div>
+            <div class="col-8">
+              <div class="filters d-flex justify-content-end">
                 <div class="dropdown me-2">
-                    <select class="form-select">
-                        <option value="consultores">Consultores</option>
-                    </select>
+                  <select class="form-select">
+                    <option value="consultores">Consultores</option>
+                  </select>
                 </div>
                 <div class="dropdown me-2">
-                    <select class="form-select">
-                        <option value="setembro">SETEMBRO</option>
-                        <option value="outubro">OUTUBRO</option>
-                    </select>
+                  <select class="form-select">
+                    <option value="outubro">SETEMBRO</option>
+                    <option value="outubro" selected>OUTUBRO</option>
+                  </select>
                 </div>
                 <div class="dropdown">
-                    <select class="form-select">
-                        <option value="2024">2024</option>
-                    </select>
+                  <select class="form-select">
+                    <option value="2024">2024</option>
+                  </select>
                 </div>
+              </div>
             </div>
-        </div>
-    </div>
+          </div>
 
-    <div class="card-deck">
-        <!-- Card Volume -->
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
+          <div class="card-deck">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Volume</h5>
                 <hr>
                 <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled volume-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Carol"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>1º Carol Bp</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 900,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Canais"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>2º Canais</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 600,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Amanda"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>3º Amanda</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 400,00</span>
+                    </div>
+                  </li>
+                </ul>
                 <hr>
                 <div class="text-center">
-                    <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="toggleDetails(this)">Ver Tudo!</span>
                 </div>
                 <div class="more-details" style="display: none; margin-top: 10px;">
-                    <p>Mais informações sobre o volume...</p>
+                  <p>Mais informações sobre o volume...</p>
                 </div>
+              </div>
             </div>
-        </div>
 
-        <!-- Card Ticket Médio -->
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio</h5>
                 <hr>
                 <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled ticket-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 1"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>1º Carol Bp</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 1.800,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 2"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>2º Canais</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 500,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 3"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>3º Amanda</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 300,00</span>
+                    </div>
+                  </li>
+                </ul>
                 <hr>
                 <div class="text-center">
-                    <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="toggleDetails(this)">Ver Tudo!</span>
                 </div>
                 <div class="more-details" style="display: none; margin-top: 10px;">
-                    <p>Mais informações sobre o ticket médio...</p>
-                </div>
-            </div>
-        </div>
+                  <p>Mais informações sobre o volume...</p>
 
-        <!-- Card Quantidade de Contratos -->
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Contratos</h5>
                 <hr>
                 <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled quantidade-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 1"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>1º Carol Bp</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 700,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 2"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>2º Canais</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 450,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 3"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>3º Amanda</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 350,00</span>
+                    </div>
+                  </li>
+                </ul>
                 <hr>
                 <div class="text-center">
-                    <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="toggleDetails(this)">Ver Tudo!</span>
                 </div>
                 <div class="more-details" style="display: none; margin-top: 10px;">
-                    <p>Mais informações sobre a quantidade de contratos...</p>
-                </div>
-            </div>
-        </div>
+                  <p>Mais informações sobre o volume...</p>
 
-        <!-- Card Maiores Contratos -->
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Contratos</h5>
                 <hr>
                 <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled maiores-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 1"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>1º Carol Bp</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 600,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 2"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>2º Canais</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 400,00</span>
+                    </div>
+                  </li>
+                  <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="Exemplo 3"
+                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                      <strong>3º Amanda</strong><br>
+                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 300,00</span>
+                    </div>
+                  </li>
+                </ul>
                 <hr>
                 <div class="text-center">
-                    <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="toggleDetails(this)">Ver Tudo!</span>
                 </div>
                 <div class="more-details" style="display: none; margin-top: 10px;">
-                    <p>Mais informações sobre os maiores contratos...</p>
+                  <p>Mais informações sobre o volume...</p>
+
                 </div>
+              </div>
             </div>
+          </div>
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+          <div class="container-fluid">
+            <hr>
+            <!-- Content Row -->
+            <div class="row align-items-center mb-4">
+              <div class="col-4">
+                <h5>Ranking em Propostas com <br><strong style="color: black;">Crédito Aprovado</strong>
+                  <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
+                </h5>
+                <h6 class="total-credito">propostas com Volume Total de</h6>
+              </div>
+              <div class="col-8">
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown me-2">
+                    <select class="form-select">
+                      <option value="consultores">Consultores</option>
+                    </select>
+                  </div>
+                  <div class="dropdown me-2">
+                    <select class="form-select">
+                      <option value="setembro">SETEMBRO</option>
+                      <option value="outubro" selected>OUTUBRO</option>
+                    </select>
+                  </div>
+                  <div class="dropdown">
+                    <select class="form-select">
+                      <option value="2024">2024</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-deck">
+              <div class="card" id="volume-proposta" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Volume Proposta</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="ticket-medio" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio Proposta</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="quantidade-propostas" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Propostas</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="maiores-propostas" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Propostas</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Propostas cadastradas -->
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Content Row -->
+            <div class="row">
+
+              <!-- Acima ta o fim do segundo container -->
+            </div>
+            <!-- -- Linha acima é fim container -->
+          </div>
+
+          <div class="container-fluid">
+            <hr>
+            <!-- Content Row -->
+            <div class="row align-items-center mb-4">
+              <div class="col-4">
+                <h5>Ranking em Propostas em <br><strong style="color: black;">Análise de Crédito</strong>
+                  <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
+                  <div class="total-credito">
+                    <h6 class="total-analise"></h6>
+                  </div>
+                </h5>
+              </div>
+              <div class="col-8">
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown me-2">
+                    <select class="form-select" id="consultores" onchange="fetchPropostas()">
+                      <option value="consultores">Consultores</option>
+                    </select>
+                  </div>
+                  <div class="dropdown me-2">
+                    <select class="form-select" id="mes" onchange="fetchPropostas()">
+                      <option value="setembro">SETEMBRO</option>
+                      <option value="outubro" selected>OUTUBRO</option>
+                    </select>
+                  </div>
+                  <div class="dropdown">
+                    <select class="form-select" id="ano" onchange="fetchPropostas()">
+                      <option value="2024" selected>2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-deck">
+              <div class="card" id="volume-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Volume Análise de Crédito</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="ticket-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio Enviadas a Análise</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="quantidade-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Propostas</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="maiores-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Contratos</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <span style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="toggleDetails(this)">Ver Tudo!</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Content Row -->
+            <div class="row">
+
+              <!-- Acima ta o fim do segundo container  Proposta -->
+            </div>
+            <!-- -- Linha acima é fim container -->
+          </div>
         </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <!-- <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Your Website 2021</span>
+      </div> -->
+        </div>
+      </footer>
+      <!-- End of Footer -->
     </div>
+    <!-- End of Content Wrapper -->
+  </div>
+  <!-- End of Page Wrapper -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
 
-    <script>
-        async function fetchData() {
-            try {
-                const response = await fetch('https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasPainel');
-                if (!response.ok) throw new Error('Erro ao buscar dados');
-                const data = await response.json();
-                console.log(data); // Adicione isto para depuração
-                return data;
-            } catch (error) {
-                console.error('Erro:', error);
-                return { volume: [], ticketMedio: [], quantidade: [], maiores: [] }; // Ajuste conforme necessário
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Select "Logout" below if you are ready to end your current session.
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">
+            Cancel
+          </button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/chart-area-demo.js"></script>
+  <script src="js/demo/chart-pie-demo.js"></script>
+
+
+  <script>
+    async function fetchPropostas() {
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
+      const username = 'dba';
+      const password = 'Yar05710';
+      const headers = new Headers({
+        'Authorization': 'Basic ' + btoa(`${username}:${password}`),
+        'Content-Type': 'application/json'
+      });
+
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: headers
+        });
+
+        if (!response.ok) throw new Error('Erro ao buscar dados da API');
+
+        const data = await response.json();
+        console.log(data); // Verifique os dados retornados
+
+        // Filtra os dados para o mês de outubro de 2024
+        const filtraData = data.filter(item => {
+          if (!item.dataEmissao) return false;
+          const dataEmissao = new Date(item.dataEmissao);
+          return dataEmissao.getFullYear() === 2024 && dataEmissao.getMonth() === 9; // Outubro (0-indexed)
+        });
+
+
+        // Calcula total de propostas e volume total
+        const totalPropostas = filtraData.length;
+        const volumeTotal = filtraData.reduce((acc, item) => acc + item.valor, 0);
+
+        // Função para formatar valores
+        const formatarValor = valor => {
+          return `R$ ${valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
+        };
+
+        // Atualiza a UI com total de propostas e volume total
+        document.querySelector('.total-propostas').innerText = `${totalPropostas} propostas com volume total de ${formatarValor(volumeTotal)}`;
+
+        // Preenchendo a lista de volume (soma por consultorMonetare)
+        const volumeList = document.querySelector('.card:nth-child(1) .list-unstyled');
+        volumeList.innerHTML = '';
+
+        const volumePorConsultor = {};
+
+        // Soma o volume por consultor
+        filtraData.forEach(item => {
+          const consultor = item.consultorMonetare;
+          if (!volumePorConsultor[consultor]) {
+            volumePorConsultor[consultor] = 0;
+          }
+          volumePorConsultor[consultor] += item.valor;
+        });
+
+        // Ordena consultores por volume e limita a 5
+        const consultoresOrdenados = Object.keys(volumePorConsultor).sort((a, b) => volumePorConsultor[b] - volumePorConsultor[a]);
+        consultoresOrdenados.slice(0, 5).forEach((consultor, index) => {
+          const volumeItem = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 3; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(volumePorConsultor[consultor])}</span>
+                    </div>
+                </li>
+            `;
+          volumeList.innerHTML += volumeItem;
+        });
+
+        // Adicionando ticket médio (limite a 5)
+        const ticketMedioList = document.querySelector('.card:nth-child(2) .list-unstyled');
+        ticketMedioList.innerHTML = '';
+
+        const ticketMedioPorConsultor = {};
+
+        // Soma o faturamento e conta o número de vendas por consultor
+        filtraData.forEach(item => {
+          const consultor = item.consultorMonetare;
+          if (!ticketMedioPorConsultor[consultor]) {
+            ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
+          }
+          ticketMedioPorConsultor[consultor].total += item.valor;
+          ticketMedioPorConsultor[consultor].count += 1;
+        });
+
+        // Calcula ticket médio e cria um array para ordenação
+        const ticketMedioArray = Object.keys(ticketMedioPorConsultor).map(consultor => {
+          const total = ticketMedioPorConsultor[consultor].total;
+          const count = ticketMedioPorConsultor[consultor].count;
+          const ticketMedio = count > 0 ? total / count : 0;
+          return { consultor, ticketMedio };
+        });
+
+        // Ordena por ticket médio (do maior para o menor) e limita a 5
+        const consultoresOrdenadosPorTicket = ticketMedioArray.sort((a, b) => b.ticketMedio - a.ticketMedio).slice(0, 5);
+
+        consultoresOrdenadosPorTicket.forEach((item, index) => {
+          const { consultor, ticketMedio } = item;
+
+          const ticketMedioItem = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
+                            ${formatarValor(ticketMedio)}
+                        </span>
+                    </div>
+                </li>
+            `;
+          ticketMedioList.innerHTML += ticketMedioItem;
+        });
+
+
+        // Adiciona dados ao card de quantidade de contratos (limite a 5)
+        // Adiciona dados ao card de quantidade de contratos (limite a 5)
+        const quantidadeContratosList = document.querySelector('.card:nth-child(3) .list-unstyled');
+        quantidadeContratosList.innerHTML = '';
+        const quantidadePorConsultor = {};
+
+        // Conta a quantidade de contratos por consultor
+        filtraData.forEach(item => {
+          const consultor = item.consultorMonetare;
+          if (!quantidadePorConsultor[consultor]) {
+            quantidadePorConsultor[consultor] = 0;
+          }
+          quantidadePorConsultor[consultor]++;
+        });
+
+        // Ordena consultores por quantidade de contratos
+        const consultoresOrdenadosQuant = Object.keys(quantidadePorConsultor);
+        consultoresOrdenadosQuant.sort((a, b) => quantidadePorConsultor[b] - quantidadePorConsultor[a]);
+
+        // Limita a exibição a 5 consultores
+        consultoresOrdenadosQuant.slice(0, 5).forEach((consultor, index) => {
+          const quantidadeItem = `
+        <li class="d-flex align-items-center">
+            <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+            <div style="flex-grow: 3; text-align: right;">
+                <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
+                    ${quantidadePorConsultor[consultor]} Contratos
+                </span>
+            </div>
+        </li>
+    `;
+          quantidadeContratosList.innerHTML += quantidadeItem;
+        });
+
+
+        // Adiciona dados ao card de maiores contratos (limite a 5)
+
+        const maioresContratosList = document.querySelector('.card:nth-child(4) .list-unstyled');
+        maioresContratosList.innerHTML = '';
+        const maioresContratos = filtraData.sort((a, b) => b.valor - a.valor);
+
+        const consultoresExibidos = new Set(); // Para rastrear consultores já exibidos
+
+        maioresContratos.forEach(item => {
+          const consultor = item.consultorMonetare;
+
+          // Adiciona o consultor ao conjunto se ainda não foi exibido
+          if (!consultoresExibidos.has(consultor)) {
+            consultoresExibidos.add(consultor);
+
+            const maioresItem = `
+            <li class="d-flex align-items-center">
+                <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                <div style="flex-grow: 3; text-align: right;">
+                    <strong style="color: black;">${consultoresExibidos.size}º ${consultor}</strong>
+                    <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
+                        ${formatarValor(item.valor)}
+                    </span>
+                </div>
+            </li>
+        `;
+            maioresContratosList.innerHTML += maioresItem;
+
+            // Para garantir que exibimos no máximo 5 consultores
+            if (consultoresExibidos.size >= 5) {
+              return; // Interrompe o loop se já temos 5 consultores exibidos
             }
-        }
-    
-        async function populateData() {
-            const data = await fetchData();
-    
-            // Ajuste essas variáveis conforme a estrutura real da resposta
-            const volume = data.volume || [];
-            const ticketMedio = data.ticketMedio || [];
-            const quantidade = data.quantidade || [];
-            const maiores = data.maiores || [];
-    
-            function createListItems(list, containerClass) {
-                list.forEach(item => {
-                    const listItem = `
-                        <li class="d-flex justify-content-between align-items-center">
-                            <img src="img/undraw_profile.svg" alt="${item.nome}" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                            <div style="flex-grow: 1; text-align: right;">
-                                <strong>${item.posicao} ${item.nome}</strong><br>
-                                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ ${item.valor}</span>
-                            </div>
-                        </li>
-                    `;
-                    document.querySelector(containerClass).innerHTML += listItem;
-                });
+          }
+        });
+
+      } catch (error) {
+        console.error('Erro:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchPropostas);
+  </script>
+
+
+
+
+  <!-- ------------------------------------------------------------------------------------------------------------- -->
+
+  <!-- Script para o Ranking de Propostas -->
+  <script>
+    async function fetchPropostas() {
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
+      const username = 'dba';
+      const password = 'Yar05710';
+
+      const headers = new Headers({
+        'Authorization': 'Basic ' + btoa(`${username}:${password}`),
+        'Content-Type': 'application/json'
+      });
+
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: headers
+        });
+
+        if (!response.ok) throw new Error(`Erro ao buscar dados da API: ${response.statusText}`);
+
+        const data = await response.json();
+        console.log(data);
+
+        // Filtra os dados conforme necessário (exemplo: para o mês de outubro de 2024)
+        const filtraData = data.filter(item => {
+          if (!item.dataAprovacaoCredito) return false; // Troque dataEmissao por dataCadastro
+          const dataAprovacaoCredito = new Date(item.dataAprovacaoCredito);
+          return dataAprovacaoCredito.getFullYear() === 2024 && dataAprovacaoCredito.getMonth() === 9; // Outubro
+        });
+
+
+        // Calcula total de propostas e volume total
+        const totalPropostas = filtraData.length;
+        const volumeTotal = filtraData.reduce((acc, item) => acc + item.valor, 0);
+
+        // Atualiza a linha de total de propostas
+        const totalCardText = document.querySelector('.total-credito');
+        totalCardText.innerText = `${totalPropostas} propostas com Volume Total de R$ ${volumeTotal.toFixed(2)}`;
+
+        // Preenchendo a lista de Volume Proposta
+        const volumeList = document.querySelector('#volume-proposta .list-unstyled');
+        volumeList.innerHTML = '';
+        filtraData.slice(0, 5).forEach((item, index) => {
+          const volumeItem = `
+                     <li class="d-flex align-items-center">
+                      <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; margin-right: 5px;">
+                      <div style="flex-grow: 1; text-align: right;">
+                          <strong style="color: black;">${index + 1}º ${item.consultorMonetare}</strong>
+                          <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${item.valor.toFixed(2)}</span>
+                      </div>
+                  </li>
+                `;
+          volumeList.innerHTML += volumeItem;
+        });
+
+        // Adicionando Ticket Médio Proposta
+        const ticketMedioList = document.querySelector('#ticket-medio .list-unstyled');
+        ticketMedioList.innerHTML = '';
+        filtraData.slice(0, 5).forEach((item, index) => {
+          const ticketMedioItem = `
+                    <li class="d-flex align-items-center">
+                        <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; margin-right: 5px;">
+                        <div style="flex-grow: 1; text-align: right;">
+                            <strong style="color: black;">${index + 1}º ${item.consultorMonetare}</strong>
+                            <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${(item.valor / item.prazo).toFixed(2)}</span>
+                        </div>
+                    </li>
+                `;
+          ticketMedioList.innerHTML += ticketMedioItem;
+        });
+
+        // Adiciona dados ao card de Quantidade de Propostas
+        const quantidadeContratosList = document.querySelector('#quantidade-propostas .list-unstyled');
+        quantidadeContratosList.innerHTML = '';
+        const quantidadePorConsultor = {};
+
+        // Filtra os dados para garantir que só consideramos os de outubro de 2024 com dataEmissao
+        filtraData.forEach(item => {
+          if (!item.dataEmissao) return; // Ignora se não tiver dataEmissao
+          const dataEmissao = new Date(item.dataEmissao);
+          if (dataEmissao.getFullYear() === 2024 && dataEmissao.getMonth() === 9) { // Outubro (0-indexed)
+            if (!quantidadePorConsultor[item.consultorMonetare]) {
+              quantidadePorConsultor[item.consultorMonetare] = 0;
             }
-    
-            createListItems(volume, '.volume-list');
-            createListItems(ticketMedio, '.ticket-list');
-            createListItems(quantidade, '.quantidade-list');
-            createListItems(maiores, '.maiores-list');
+            quantidadePorConsultor[item.consultorMonetare]++;
+          }
+        });
+
+        const consultoresOrdenados = Object.keys(quantidadePorConsultor);
+        consultoresOrdenados.slice(0, 5).forEach((consultor, index) => {
+          const quantidadeItem = `
+        <li class="d-flex align-items-center">
+            <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+            <div style="flex-grow: 3; text-align: right;">
+                <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidadePorConsultor[consultor]} Contratos</span>
+            </div>
+        </li>
+    `;
+          quantidadeContratosList.innerHTML += quantidadeItem;
+        });
+
+
+        // Adiciona dados ao card de Maiores Contratos
+        const maioresContratosList = document.querySelector('#maiores-propostas .list-unstyled');
+        maioresContratosList.innerHTML = '';
+        const maioresContratos = filtraData.sort((a, b) => b.valor - a.valor).slice(0, 5);
+
+        maioresContratos.forEach((item, index) => {
+          const maioresItem = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 3; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${item.consultorMonetare}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${item.valor.toFixed(2)}</span>
+                    </div>
+                </li>
+                `;
+          maioresContratosList.innerHTML += maioresItem;
+        });
+
+        // Adiciona dados ao card de Propostas Recentes
+        const propostasRecentesList = document.querySelector('.card:nth-child(5) .list-unstyled');
+        propostasRecentesList.innerHTML = '';
+
+        filtraData.slice(0, 5).forEach((item, index) => {
+          const propostaItem = `
+                <li class="d-flex justify-content-between align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                        <strong>${index + 1}º ${item.consultorMonetare}</strong><br>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ ${item.valor.toFixed(2)}</span>
+                    </div>
+                </li>
+                `;
+          propostasRecentesList.innerHTML += propostaItem;
+        });
+
+      } catch (error) {
+        console.error('Erro:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchPropostas);
+  </script>
+
+
+
+
+
+  <!-- // Script para Anális de credito -->
+  <script>
+    async function fetchPropostas() {
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
+      const username = 'dba';
+      const password = 'Yar05710';
+      const headers = new Headers({
+        'Authorization': 'Basic ' + btoa(`${username}:${password}`),
+        'Content-Type': 'application/json'
+      });
+
+      try {
+        const response = await fetch(url, { method: 'GET', headers: headers });
+
+        if (!response.ok) throw new Error('Erro ao buscar dados da API');
+
+        const data = await response.json();
+        console.log('Dados recebidos:', data);
+
+        const filtraData = data.filter(item => {
+          if (!item.dataEnvioAnaliseBanco) return false;
+          const dataEnvioAnaliseBanco = new Date(item.dataEnvioAnaliseBanco);
+          return dataEnvioAnaliseBanco.getFullYear() === 2024 && dataEnvioAnaliseBanco.getMonth() === 9; // Outubro
+        });
+
+        console.log('Dados filtrados para Outubro de 2024:', filtraData);
+
+        // Preencher listas
+        AtualizaTotalPropostas(filtraData);
+        AnaliseCard('volume-analise', getTopFive(filtraData, 'volume'));
+        AnaliseCard('ticket-analise', getTopFive(filtraData, 'ticket'));
+        AnaliseCard('quantidade-analise', getContractCounts(filtraData));
+        AnaliseCard('maiores-analise', getTopFive(filtraData, 'maiores'));
+        AnaliseCard('propostas-recentes', filtraData.slice(0, 5)); // Propostas recentes
+
+      } catch (error) {
+        console.error('Erro:', error);
+      }
+    }
+
+    function AtualizaTotalPropostas(filtraData) {
+      const totalPropostas = filtraData.length;
+      const volumeTotal = filtraData.reduce((acc, item) => acc + item.valor, 0);
+
+      const totalCardText = document.querySelector('.total-analise');
+      totalCardText.innerText = `${totalPropostas} propostas com Volume Total de R$ ${volumeTotal.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
+
+      const totalAnaliseText = document.querySelector('.total-analise');
+      totalAnaliseText.innerText = `${totalPropostas} propostas com Volume Total de R$ ${volumeTotal.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
+    }
+
+    function getTopFive(data, type) {
+      const result = [];
+      data.forEach(item => {
+        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        const valor = item.valor !== undefined ? item.valor : 0;
+        const prazo = item.prazo || 1; // Evitar divisão por zero
+
+        if (type === 'ticket') {
+          const ticketMedio = valor / prazo;
+          result.push({ tipo: consultor, valor: ticketMedio, consultor: consultor });
+        } else if (type === 'maiores') {
+          result.push({ tipo: consultor, valor: valor, consultor: consultor });
+        } else {
+          result.push({ tipo: consultor, valor: valor, consultor: consultor });
         }
-    
-        function toggleDetails(element) {
-            const details = element.parentElement.nextElementSibling;
-            details.style.display = details.style.display === 'none' ? 'block' : 'none';
+      });
+
+      return result.sort((a, b) => b.valor - a.valor).slice(0, 5);
+    }
+
+    function getContractCounts(data) {
+      const quantidadePorConsultor = {};
+      data.forEach(item => {
+        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        if (!quantidadePorConsultor[consultor]) {
+          quantidadePorConsultor[consultor] = 0;
         }
-    
-        populateData();
-    </script>
-    
-</div>
+        quantidadePorConsultor[consultor]++;
+      });
+
+      return Object.entries(quantidadePorConsultor)
+        .map(([consultor, quantidade]) => ({ consultor, quantidade }))
+        .sort((a, b) => b.quantidade - a.quantidade)
+        .slice(0, 5);
+    }
+
+    function AnaliseCard(cardId, data) {
+      const list = document.querySelector(`#${cardId} .list-unstyled`);
+      list.innerHTML = '';
+
+      if (!data || data.length === 0) {
+        list.innerHTML = '<li>Nenhum dado disponível.</li>';
+        return;
+      }
+
+      console.log(`Preenchendo ${cardId} com dados:`, data);
+
+      data.forEach((item, index) => {
+        const tipo = item.tipo || item.consultor || 'Consultor desconhecido';
+        const quantidade = cardId === 'quantidade-analise' ? `${item.quantidade} Proposta(s)` : `R$ ${item.valor.toFixed(2).replace('.', ',')}`;
+
+        const listItem = `
+      <li class="d-flex align-items-center">
+        <img src="img/undraw_profile.svg" alt="${tipo}" style="width: 30px; height: 30px; margin-right: 5px;">
+        <div style="flex-grow: 1; text-align: right;">
+          <strong style="color: black;">${index + 1}º ${tipo}</strong>
+          <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidade}</span>
+        </div>
+      </li>
+    `;
+        list.innerHTML += listItem;
+      });
+    }
+
+    function toggleDetails(element) {
+      const cardBody = element.closest('.card-body');
+      const list = cardBody.querySelector('.list-unstyled');
+      const visivel = list.style.display === 'block';
+
+      list.style.display = visivel ? 'none' : 'block';
+      element.textContent = visivel ? 'Ver Tudo!' : 'Ver Menos!';
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchPropostas);
+
+  </script>
+
+
+
+
+
+
 
 </body>
+
 </html>
