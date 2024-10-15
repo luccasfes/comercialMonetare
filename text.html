@@ -810,6 +810,8 @@
         if (!response.ok) throw new Error('Erro ao buscar dados da API');
 
         const data = await response.json();
+
+        
         console.log(data); // Verifique os dados retornados
 
         // Filtra os dados para o mês de outubro de 2024
@@ -840,7 +842,7 @@
 
         // Soma o volume por consultor
         filtraData.forEach(item => {
-          const consultor = item.consultorMonetare;
+          const consultor = item.consultorMonetare.substring(0, 10);
           if (!volumePorConsultor[consultor]) {
             volumePorConsultor[consultor] = 0;
           }
@@ -870,7 +872,7 @@
 
         // Soma o faturamento e conta o número de vendas por consultor
         filtraData.forEach(item => {
-          const consultor = item.consultorMonetare;
+          const consultor = item.consultorMonetare.substring(0, 10);
           if (!ticketMedioPorConsultor[consultor]) {
             ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
           }
@@ -915,7 +917,7 @@
 
         // Conta a quantidade de contratos por consultor
         filtraData.forEach(item => {
-          const consultor = item.consultorMonetare;
+          const consultor = item.consultorMonetare.substring(0, 10);
           if (!quantidadePorConsultor[consultor]) {
             quantidadePorConsultor[consultor] = 0;
           }
@@ -952,7 +954,7 @@
         const consultoresExibidos = new Set(); // Para rastrear consultores já exibidos
 
         maioresContratos.forEach(item => {
-          const consultor = item.consultorMonetare;
+          const consultor = item.consultorMonetare.substring(0, 10);
 
           // Adiciona o consultor ao conjunto se ainda não foi exibido
           if (!consultoresExibidos.has(consultor)) {
@@ -986,159 +988,186 @@
     document.addEventListener('DOMContentLoaded', fetchPropostas);
   </script>
 
-
-
-
   <!-- ------------------------------------------------------------------------------------------------------------- -->
 
   <!-- Script para o Ranking de Propostas -->
   <script>
     async function fetchPropostas() {
-      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
-      const username = 'dba';
-      const password = 'Yar05710';
-
-      const headers = new Headers({
-        'Authorization': 'Basic ' + btoa(`${username}:${password}`),
-        'Content-Type': 'application/json'
-      });
-
-      try {
-        const response = await fetch(url, {
-          method: 'GET',
-          headers: headers
+        const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
+        const username = 'dba';
+        const password = 'Yar05710';
+    
+        const headers = new Headers({
+            'Authorization': 'Basic ' + btoa(`${username}:${password}`),
+            'Content-Type': 'application/json'
         });
-
-        if (!response.ok) throw new Error(`Erro ao buscar dados da API: ${response.statusText}`);
-
-        const data = await response.json();
-        console.log(data);
-
-        // Filtra os dados conforme necessário (exemplo: para o mês de outubro de 2024)
-        const filtraData = data.filter(item => {
-          if (!item.dataAprovacaoCredito) return false; // Troque dataEmissao por dataCadastro
-          const dataAprovacaoCredito = new Date(item.dataAprovacaoCredito);
-          return dataAprovacaoCredito.getFullYear() === 2024 && dataAprovacaoCredito.getMonth() === 9; // Outubro
-        });
-
-
-        // Calcula total de propostas e volume total
-        const totalPropostas = filtraData.length;
-        const volumeTotal = filtraData.reduce((acc, item) => acc + item.valor, 0);
-
-        // Atualiza a linha de total de propostas
-        const totalCardText = document.querySelector('.total-credito');
-        totalCardText.innerText = `${totalPropostas} propostas com Volume Total de R$ ${volumeTotal.toFixed(2)}`;
-
-        // Preenchendo a lista de Volume Proposta
-        const volumeList = document.querySelector('#volume-proposta .list-unstyled');
-        volumeList.innerHTML = '';
-        filtraData.slice(0, 5).forEach((item, index) => {
-          const volumeItem = `
-                     <li class="d-flex align-items-center">
-                      <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; margin-right: 5px;">
-                      <div style="flex-grow: 1; text-align: right;">
-                          <strong style="color: black;">${index + 1}º ${item.consultorMonetare}</strong>
-                          <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${item.valor.toFixed(2)}</span>
-                      </div>
-                  </li>
-                `;
-          volumeList.innerHTML += volumeItem;
-        });
-
-        // Adicionando Ticket Médio Proposta
-        const ticketMedioList = document.querySelector('#ticket-medio .list-unstyled');
-        ticketMedioList.innerHTML = '';
-        filtraData.slice(0, 5).forEach((item, index) => {
-          const ticketMedioItem = `
-                    <li class="d-flex align-items-center">
-                        <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; margin-right: 5px;">
-                        <div style="flex-grow: 1; text-align: right;">
-                            <strong style="color: black;">${index + 1}º ${item.consultorMonetare}</strong>
-                            <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${(item.valor / item.prazo).toFixed(2)}</span>
-                        </div>
-                    </li>
-                `;
-          ticketMedioList.innerHTML += ticketMedioItem;
-        });
-
-        // Adiciona dados ao card de Quantidade de Propostas
-        const quantidadeContratosList = document.querySelector('#quantidade-propostas .list-unstyled');
-        quantidadeContratosList.innerHTML = '';
-        const quantidadePorConsultor = {};
-
-        // Filtra os dados para garantir que só consideramos os de outubro de 2024 com dataEmissao
-        filtraData.forEach(item => {
-          if (!item.dataEmissao) return; // Ignora se não tiver dataEmissao
-          const dataEmissao = new Date(item.dataEmissao);
-          if (dataEmissao.getFullYear() === 2024 && dataEmissao.getMonth() === 9) { // Outubro (0-indexed)
-            if (!quantidadePorConsultor[item.consultorMonetare]) {
-              quantidadePorConsultor[item.consultorMonetare] = 0;
-            }
-            quantidadePorConsultor[item.consultorMonetare]++;
-          }
-        });
-
-        const consultoresOrdenados = Object.keys(quantidadePorConsultor);
-        consultoresOrdenados.slice(0, 5).forEach((consultor, index) => {
-          const quantidadeItem = `
-        <li class="d-flex align-items-center">
-            <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
-            <div style="flex-grow: 3; text-align: right;">
-                <strong style="color: black;">${index + 1}º ${consultor}</strong>
-                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidadePorConsultor[consultor]} Contratos</span>
-            </div>
-        </li>
-    `;
-          quantidadeContratosList.innerHTML += quantidadeItem;
-        });
-
-
-        // Adiciona dados ao card de Maiores Contratos
-        const maioresContratosList = document.querySelector('#maiores-propostas .list-unstyled');
-        maioresContratosList.innerHTML = '';
-        const maioresContratos = filtraData.sort((a, b) => b.valor - a.valor).slice(0, 5);
-
-        maioresContratos.forEach((item, index) => {
-          const maioresItem = `
+    
+        try {
+            const response = await fetch(url, { method: 'GET', headers: headers });
+    
+            if (!response.ok) throw new Error('Erro ao buscar dados da API');
+    
+            const data = await response.json();
+            console.log('Dados retornados:', data); // Verifique os dados
+    
+            // Filtra os dados para o mês de outubro de 2024
+            const filtraData = data.filter(item => {
+                if (!item.dataAprovacaoCredito) return false;
+                const dataAprovacaoCredito = new Date(item.dataAprovacaoCredito);
+                return dataAprovacaoCredito.getFullYear() === 2024 && dataAprovacaoCredito.getMonth() === 9; // Outubro
+            });
+    
+            console.log('Dados filtrados:', filtraData); // Verifique os dados filtrados
+    
+            // Calcula total de propostas e volume total
+            const totalPropostas = filtraData.length;
+            const volumeTotal = filtraData.reduce((acc, item) => {
+                const valor = parseFloat(item.valor) || 0; // Certifique-se de que é um número
+                return acc + valor;
+            }, 0);
+    
+            console.log('Total de Propostas:', totalPropostas);
+            console.log('Volume Total:', volumeTotal); // Verifique o volume total
+    
+            // Função para formatar valores
+            const formatarValor = valor => {
+                return `R$ ${valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
+            };
+    
+            // Atualiza a UI com total de propostas e volume total
+            document.querySelector('.total-credito').innerText = `${totalPropostas} propostas com volume total de ${formatarValor(volumeTotal)}`;
+    
+            // Preenchendo a lista de volume por consultor
+            const volumePorConsultor = {};
+            filtraData.forEach(item => {
+                const consultor = item.consultorMonetare;
+                if (!volumePorConsultor[consultor]) {
+                    volumePorConsultor[consultor] = 0;
+                }
+                volumePorConsultor[consultor] += parseFloat(item.valor) || 0; // Soma garantida como número
+            });
+    
+            const consultoresOrdenadosVolume = Object.keys(volumePorConsultor)
+                .sort((a, b) => volumePorConsultor[b] - volumePorConsultor[a])
+                .slice(0, 5);
+    
+            preencherLista('#volume-proposta .list-unstyled', consultoresOrdenadosVolume, (consultor, index) => `
                 <li class="d-flex align-items-center">
-                    <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
                     <div style="flex-grow: 3; text-align: right;">
-                        <strong style="color: black;">${index + 1}º ${item.consultorMonetare}</strong>
-                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${item.valor.toFixed(2)}</span>
+                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(volumePorConsultor[consultor])}</span>
                     </div>
                 </li>
-                `;
-          maioresContratosList.innerHTML += maioresItem;
-        });
-
-        // Adiciona dados ao card de Propostas Recentes
-        const propostasRecentesList = document.querySelector('.card:nth-child(5) .list-unstyled');
-        propostasRecentesList.innerHTML = '';
-
-        filtraData.slice(0, 5).forEach((item, index) => {
-          const propostaItem = `
-                <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="${item.consultorMonetare}" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
+            `);
+    
+            // Adicionando ticket médio
+            const ticketMedioPorConsultor = {};
+            filtraData.forEach(item => {
+                const consultor = item.consultorMonetare;
+                if (!ticketMedioPorConsultor[consultor]) {
+                    ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
+                }
+                ticketMedioPorConsultor[consultor].total += parseFloat(item.valor) || 0; // Certifique-se de que é um número
+                ticketMedioPorConsultor[consultor].count += 1;
+            });
+    
+            const ticketMedioArray = Object.keys(ticketMedioPorConsultor)
+                .map(consultor => ({
+                    consultor,
+                    ticketMedio: ticketMedioPorConsultor[consultor].count > 0
+                        ? ticketMedioPorConsultor[consultor].total / ticketMedioPorConsultor[consultor].count
+                        : 0
+                }))
+                .sort((a, b) => b.ticketMedio - a.ticketMedio)
+                .slice(0, 5);
+    
+            preencherLista('#ticket-medio .list-unstyled', ticketMedioArray, (item, index) => `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${item.consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
                     <div style="flex-grow: 1; text-align: right;">
-                        <strong>${index + 1}º ${item.consultorMonetare}</strong><br>
-                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ ${item.valor.toFixed(2)}</span>
+                        <strong style="color: black;">${index + 1}º ${item.consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(item.ticketMedio)}</span>
                     </div>
                 </li>
-                `;
-          propostasRecentesList.innerHTML += propostaItem;
-        });
-
-      } catch (error) {
-        console.error('Erro:', error);
-      }
+            `);
+    
+            // Adicionando dados ao card de quantidade de contratos
+            const quantidadePorConsultor = {};
+            filtraData.forEach(item => {
+                const consultor = item.consultorMonetare;
+                if (!quantidadePorConsultor[consultor]) {
+                    quantidadePorConsultor[consultor] = 0;
+                }
+                quantidadePorConsultor[consultor]++;
+            });
+    
+            const consultoresOrdenadosQuant = Object.keys(quantidadePorConsultor)
+                .sort((a, b) => quantidadePorConsultor[b] - quantidadePorConsultor[a])
+                .slice(0, 5);
+    
+            preencherLista('#quantidade-propostas .list-unstyled', consultoresOrdenadosQuant, (consultor, index) => `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 3; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidadePorConsultor[consultor]} Contratos</span>
+                    </div>
+                </li>
+            `);
+    
+            // Adicionando dados ao card de maiores contratos
+            const maioresContratosList = document.querySelector('#maiores-propostas .list-unstyled');
+            maioresContratosList.innerHTML = '';
+            const maioresContratos = filtraData.sort((a, b) => b.valor - a.valor);
+    
+            const consultoresExibidos = new Set(); // Para rastrear consultores já exibidos
+            let count = 0; // Contador de consultores exibidos
+    
+            maioresContratos.forEach(item => {
+                const consultor = item.consultorMonetare;
+    
+                // Verifica se o consultor já foi exibido
+                if (!consultoresExibidos.has(consultor)) {
+                    consultoresExibidos.add(consultor); // Marca como exibido
+                    count++; // Incrementa o contador
+    
+                    const maioresItem = `
+                    <li class="d-flex align-items-center">
+                        <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                        <div style="flex-grow: 3; text-align: right;">
+                            <strong style="color: black;">${consultoresExibidos.size}º ${consultor}</strong>
+                            <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(item.valor)}</span>
+                        </div>
+                    </li>`;
+    
+                    maioresContratosList.innerHTML += maioresItem;
+    
+                    // Para a iteração se já foram exibidos 5 consultores
+                    if (count >= 5) {
+                        return; // Sai da função forEach
+                    }
+                }
+            });
+    
+        } catch (error) {
+            console.error('Erro:', error);
+        }
     }
-
+    
+    // Função auxiliar para preencher listas
+    const preencherLista = (listSelector, data, formatter) => {
+        const listElement = document.querySelector(listSelector);
+        listElement.innerHTML = ''; // Limpa a lista antes de preencher
+        data.forEach((item, index) => {
+            const listItem = formatter(item, index);
+            listElement.innerHTML += listItem;
+        });
+    };
+    
     document.addEventListener('DOMContentLoaded', fetchPropostas);
-  </script>
-
-
-
+    </script>
+    
 
 
   <!-- // Script para Anális de credito -->
@@ -1151,129 +1180,206 @@
         'Authorization': 'Basic ' + btoa(`${username}:${password}`),
         'Content-Type': 'application/json'
       });
-
+    
       try {
         const response = await fetch(url, { method: 'GET', headers: headers });
-
+    
         if (!response.ok) throw new Error('Erro ao buscar dados da API');
-
+    
         const data = await response.json();
         console.log('Dados recebidos:', data);
-
+    
+        // Filtra os dados para Outubro de 2024
         const filtraData = data.filter(item => {
           if (!item.dataEnvioAnaliseBanco) return false;
-          const dataEnvioAnaliseBanco = new Date(item.dataEnvioAnaliseBanco);
-          return dataEnvioAnaliseBanco.getFullYear() === 2024 && dataEnvioAnaliseBanco.getMonth() === 9; // Outubro
+          const dataEnvio = new Date(item.dataEnvioAnaliseBanco);
+          return dataEnvio.getFullYear() === 2024 && dataEnvio.getMonth() === 9; // Outubro
         });
-
-        console.log('Dados filtrados para Outubro de 2024:', filtraData);
-
-        // Preencher listas
-        AtualizaTotalPropostas(filtraData);
-        AnaliseCard('volume-analise', getTopFive(filtraData, 'volume'));
-        AnaliseCard('ticket-analise', getTopFive(filtraData, 'ticket'));
-        AnaliseCard('quantidade-analise', getContractCounts(filtraData));
-        AnaliseCard('maiores-analise', getTopFive(filtraData, 'maiores'));
-        AnaliseCard('propostas-recentes', filtraData.slice(0, 5)); // Propostas recentes
-
+    
+        // Atualiza total de propostas e volume total
+        const totalPropostas = filtraData.length;
+        const volumeTotal = filtraData.reduce((acc, item) => {
+          const valor = parseFloat(item.valor);
+          return acc + (isNaN(valor) ? 0 : valor);
+        }, 0);
+        
+        document.querySelector('.total-analise').innerText = `${totalPropostas} propostas com Volume Total de R$ ${formatarValor(volumeTotal)}`;
+    
+        // Atualiza as listas de análise
+        AtualizaListas(filtraData);
+        
       } catch (error) {
         console.error('Erro:', error);
       }
     }
-
-    function AtualizaTotalPropostas(filtraData) {
-      const totalPropostas = filtraData.length;
-      const volumeTotal = filtraData.reduce((acc, item) => acc + item.valor, 0);
-
-      const totalCardText = document.querySelector('.total-analise');
-      totalCardText.innerText = `${totalPropostas} propostas com Volume Total de R$ ${volumeTotal.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
-
-      const totalAnaliseText = document.querySelector('.total-analise');
-      totalAnaliseText.innerText = `${totalPropostas} propostas com Volume Total de R$ ${volumeTotal.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
+    
+    function formatarValor(valor) {
+      return valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
     }
-
-    function getTopFive(data, type) {
-      const result = [];
-      data.forEach(item => {
+    
+    function AtualizaListas(data) {
+      AtualizaLista('#volume-analise .list-unstyled', data, 'volume');
+      AtualizaListaTicketMedio('#ticket-analise .list-unstyled', data);
+      AtualizaListaQuantidade('#quantidade-analise .list-unstyled', data);
+      AtualizaListaMaiores('#maiores-analise .list-unstyled', data);
+    }
+    
+    function AtualizaLista(cardId, dados, tipo) {
+      const volumePorConsultor = {};
+      dados.forEach(item => {
         const consultor = item.consultorMonetare || 'Consultor desconhecido';
-        const valor = item.valor !== undefined ? item.valor : 0;
-        const prazo = item.prazo || 1; // Evitar divisão por zero
-
-        if (type === 'ticket') {
-          const ticketMedio = valor / prazo;
-          result.push({ tipo: consultor, valor: ticketMedio, consultor: consultor });
-        } else if (type === 'maiores') {
-          result.push({ tipo: consultor, valor: valor, consultor: consultor });
-        } else {
-          result.push({ tipo: consultor, valor: valor, consultor: consultor });
-        }
+        volumePorConsultor[consultor] = (volumePorConsultor[consultor] || 0) + parseFloat(item.valor || 0);
       });
-
-      return result.sort((a, b) => b.valor - a.valor).slice(0, 5);
-    }
-
-    function getContractCounts(data) {
-      const quantidadePorConsultor = {};
-      data.forEach(item => {
-        const consultor = item.consultorMonetare || 'Consultor desconhecido';
-        if (!quantidadePorConsultor[consultor]) {
-          quantidadePorConsultor[consultor] = 0;
-        }
-        quantidadePorConsultor[consultor]++;
-      });
-
-      return Object.entries(quantidadePorConsultor)
-        .map(([consultor, quantidade]) => ({ consultor, quantidade }))
-        .sort((a, b) => b.quantidade - a.quantidade)
-        .slice(0, 5);
-    }
-
-    function AnaliseCard(cardId, data) {
-      const list = document.querySelector(`#${cardId} .list-unstyled`);
+    
+      const list = document.querySelector(cardId);
       list.innerHTML = '';
-
-      if (!data || data.length === 0) {
-        list.innerHTML = '<li>Nenhum dado disponível.</li>';
-        return;
-      }
-
-      console.log(`Preenchendo ${cardId} com dados:`, data);
-
-      data.forEach((item, index) => {
-        const tipo = item.tipo || item.consultor || 'Consultor desconhecido';
-        const quantidade = cardId === 'quantidade-analise' ? `${item.quantidade} Proposta(s)` : `R$ ${item.valor.toFixed(2).replace('.', ',')}`;
-
-        const listItem = `
-      <li class="d-flex align-items-center">
-        <img src="img/undraw_profile.svg" alt="${tipo}" style="width: 30px; height: 30px; margin-right: 5px;">
-        <div style="flex-grow: 1; text-align: right;">
-          <strong style="color: black;">${index + 1}º ${tipo}</strong>
-          <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidade}</span>
-        </div>
-      </li>
-    `;
-        list.innerHTML += listItem;
+    
+      const consultoresOrdenados = Object.keys(volumePorConsultor).sort((a, b) => volumePorConsultor[b] - volumePorConsultor[a]).slice(0, 5);
+      consultoresOrdenados.forEach((consultor, index) => {
+        const item = `
+          <li class="d-flex align-items-center">
+            <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+            <div style="flex-grow: 1; text-align: right;">
+              <strong style="color: black;">${index + 1}º ${consultor}</strong>
+              <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${formatarValor(volumePorConsultor[consultor])}</span>
+            </div>
+          </li>
+        `;
+        list.innerHTML += item;
       });
     }
-
-    function toggleDetails(element) {
-      const cardBody = element.closest('.card-body');
-      const list = cardBody.querySelector('.list-unstyled');
-      const visivel = list.style.display === 'block';
-
-      list.style.display = visivel ? 'none' : 'block';
-      element.textContent = visivel ? 'Ver Tudo!' : 'Ver Menos!';
+    
+    function AtualizaListaTicketMedio(cardId, dados) {
+      const ticketMedioPorConsultor = {};
+      dados.forEach(item => {
+        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        if (!ticketMedioPorConsultor[consultor]) {
+          ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
+        }
+        ticketMedioPorConsultor[consultor].total += parseFloat(item.valor || 0);
+        ticketMedioPorConsultor[consultor].count += 1;
+      });
+    
+      const list = document.querySelector(cardId);
+      list.innerHTML = '';
+    
+      const ticketMedioArray = Object.keys(ticketMedioPorConsultor).map(consultor => {
+        const total = ticketMedioPorConsultor[consultor].total;
+        const count = ticketMedioPorConsultor[consultor].count;
+        const ticketMedio = count > 0 ? total / count : 0;
+        return { consultor, ticketMedio };
+      });
+    
+      const consultoresOrdenados = ticketMedioArray.sort((a, b) => b.ticketMedio - a.ticketMedio).slice(0, 5);
+      consultoresOrdenados.forEach((item, index) => {
+        const ticketMedioItem = `
+          <li class="d-flex align-items-center">
+            <img src="img/undraw_profile.svg" alt="${item.consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+            <div style="flex-grow: 1; text-align: right;">
+              <strong style="color: black;">${index + 1}º ${item.consultor}</strong>
+              <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${formatarValor(item.ticketMedio)}</span>
+            </div>
+          </li>
+        `;
+        list.innerHTML += ticketMedioItem;
+      });
     }
-
+    
+    function AtualizaListaQuantidade(cardId, dados) {
+      const quantidadePorConsultor = {};
+      dados.forEach(item => {
+        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        quantidadePorConsultor[consultor] = (quantidadePorConsultor[consultor] || 0) + 1;
+      });
+    
+      const list = document.querySelector(cardId);
+      list.innerHTML = '';
+    
+      const consultoresOrdenados = Object.keys(quantidadePorConsultor).sort((a, b) => quantidadePorConsultor[b] - quantidadePorConsultor[a]).slice(0, 5);
+      consultoresOrdenados.forEach((consultor, index) => {
+        const quantidadeItem = `
+          <li class="d-flex align-items-center">
+            <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+            <div style="flex-grow: 1; text-align: right;">
+              <strong style="color: black;">${index + 1}º ${consultor}</strong>
+              <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidadePorConsultor[consultor]} Proposta(s)</span>
+            </div>
+          </li>
+        `;
+        list.innerHTML += quantidadeItem;
+      });
+    }
+    
+    function AtualizaListaMaiores(cardId, dados) {
+      const list = document.querySelector(cardId);
+      list.innerHTML = '';
+    
+      const maioresContratos = dados.sort((a, b) => b.valor - a.valor).slice(0, 5);
+      const consultoresExibidos = new Set();
+    
+      maioresContratos.forEach(item => {
+        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        if (!consultoresExibidos.has(consultor)) {
+          consultoresExibidos.add(consultor);
+          const maioresItem = `
+            <li class="d-flex align-items-center">
+              <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+              <div style="flex-grow: 1; text-align: right;">
+                <strong style="color: black;">${consultoresExibidos.size}º ${consultor}</strong>
+                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${formatarValor(item.valor)}</span>
+              </div>
+            </li>
+          `;
+          list.innerHTML += maioresItem;
+        }
+      });
+    }
+    
     document.addEventListener('DOMContentLoaded', fetchPropostas);
+    </script>
+    
+  
+<!-- Script do modal -->
 
-  </script>
+<script>
+  // Adicione esta função ao seu script existente
+function mostrarModal(dados) {
+    const modal = document.getElementById('modal');
+    const detalhesList = document.getElementById('detalhes-list');
 
+    // Limpa a lista antes de adicionar novos dados
+    detalhesList.innerHTML = '';
 
+    // Preenche a lista com os dados
+    dados.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Consultor: ${item.consultorMonetare}, Valor: ${formatarValor(item.valor)}`;
+        detalhesList.appendChild(listItem);
+    });
 
+    // Mostra o modal
+    modal.style.display = 'block';
+}
 
+// Função para fechar o modal
+document.querySelector('.close').onclick = function() {
+    document.getElementById('modal').style.display = 'none';
+}
 
+// Fecha o modal se o usuário clicar fora dele
+window.onclick = function(event) {
+    const modal = document.getElementById('modal');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
+// Adicione um evento de clique no botão "Ver Tudo"
+document.getElementById('ver-tudo-btn').onclick = function() {
+    mostrarModal(filtraData); // Passa os dados filtrados para a função
+}
+
+</script>
 
 </body>
 
