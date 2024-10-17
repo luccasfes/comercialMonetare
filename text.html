@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://unpkg.com/primeicons/primeicons.css">
   <link rel="stylesheet" href="script.js">
-
+  <link rel="stylesheet" href="modal.js">
   <title>Comercial Monetare</title>
 
   <!-- Custom fonts for this template-->
@@ -337,41 +337,13 @@
               <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Volume</h5>
                 <hr>
-                <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
+                <p class="card-text total-propostas" style="font-size: 0.9rem;">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Carol"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>1º Carol Bp</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 900,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Canais"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>2º Canais</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 600,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Amanda"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>3º Amanda</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 400,00</span>
-                    </div>
-                  </li>
-                </ul>
+                <ul class="list-unstyled volume-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                 <hr>
                 <div class="text-center">
-                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
-                    onclick="toggleDetails(this)">Ver Tudo!</span>
-                </div>
-                <div class="more-details" style="display: none; margin-top: 10px;">
-                  <p>Mais informações sobre o volume...</p>
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('volume')">Ver Tudo!</button>
                 </div>
               </div>
             </div>
@@ -380,42 +352,13 @@
               <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio</h5>
                 <hr>
-                <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
+                <p class="card-text">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 1"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>1º Carol Bp</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 1.800,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 2"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>2º Canais</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 500,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 3"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>3º Amanda</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 300,00</span>
-                    </div>
-                  </li>
-                </ul>
+                <ul class="list-unstyled ticket-medios-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                 <hr>
                 <div class="text-center">
-                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
-                    onclick="toggleDetails(this)">Ver Tudo!</span>
-                </div>
-                <div class="more-details" style="display: none; margin-top: 10px;">
-                  <p>Mais informações sobre o volume...</p>
-
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('ticket')">Ver Tudo!</button>
                 </div>
               </div>
             </div>
@@ -424,42 +367,13 @@
               <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Contratos</h5>
                 <hr>
-                <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
+                <p class="card-text">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 1"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>1º Carol Bp</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 700,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 2"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>2º Canais</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 450,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 3"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>3º Amanda</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 350,00</span>
-                    </div>
-                  </li>
-                </ul>
+                <ul class="list-unstyled contratos-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                 <hr>
                 <div class="text-center">
-                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
-                    onclick="toggleDetails(this)">Ver Tudo!</span>
-                </div>
-                <div class="more-details" style="display: none; margin-top: 10px;">
-                  <p>Mais informações sobre o volume...</p>
-
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('contratos')">Ver Tudo!</button>
                 </div>
               </div>
             </div>
@@ -468,48 +382,150 @@
               <div class="card-body">
                 <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Contratos</h5>
                 <hr>
-                <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
+                <p class="card-text">Emitidos em Outubro</p>
                 <hr>
-                <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 1"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>1º Carol Bp</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 600,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 2"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>2º Canais</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 400,00</span>
-                    </div>
-                  </li>
-                  <li class="d-flex justify-content-between align-items-center">
-                    <img src="img/undraw_profile.svg" alt="Exemplo 3"
-                      style="width: 30px; height: 30px; border-radius: 50%; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                      <strong>3º Amanda</strong><br>
-                      <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0);">R$ 300,00</span>
-                    </div>
-                  </li>
-                </ul>
+                <ul class="list-unstyled maiores-contratos-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                 <hr>
                 <div class="text-center">
-                  <span style="cursor: pointer; color: #808080; text-decoration: underline;"
-                    onclick="toggleDetails(this)">Ver Tudo!</span>
-                </div>
-                <div class="more-details" style="display: none; margin-top: 10px;">
-                  <p>Mais informações sobre o volume...</p>
-
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('maiores')">Ver Tudo!</button>
                 </div>
               </div>
             </div>
           </div>
 
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+          <!-- Modal Emitidos -->
+          <div class="modal" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true"
+            style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px; max-height: 500px; overflow-y: auto;">
+
+            <div class="modal-header" style="padding: 10px; border-bottom: 1px solid #ccc;">
+              <h5 class="modal-title" id="modalLabel" style="color: black;">Ranking Completo</h5>
+              <button type="button" style="border: none; background: none; cursor: pointer;"
+                onclick="closeModal()">&times;</button>
+            </div>
+
+            <div class="modal-body" style="padding: 20px;">
+              <h5 id="modalCardTitle" style="margin-bottom: 5px; color: black; text-align: center;"></h5>
+              <p id="modalCardSubtitle" style="margin: 0; color: #555; text-align: center;">Emitidos em Outubro</p>
+              <hr>
+              <ul class="list-unstyled" id="modalDataList">
+                <!-- Itens serão inseridos aqui pelo JavaScript -->
+              </ul>
+            </div>
+
+            <div class="modal-footer" style="padding: 10px; border-top: 1px solid #ccc; text-align: center;">
+              <button type="button" class="btn btn-secondary"
+                style="padding: 10px 20px; font-size: 1rem; display: flex; justify-content: center; align-items: center;"
+                onclick="closeModal()">
+                <span style="margin: 0;">Fechar</span>
+              </button>
+            </div>
+
+          </div>
+
+
+          <div id="modalOverlay"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
+          </div>
+
+
+          <div id="modalOverlay"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
+          </div>
+
+          <script>
+            function openModal(type) {
+              const modalDataList = document.getElementById("modalDataList");
+              const modalCardTitle = document.getElementById("modalCardTitle");
+              modalDataList.innerHTML = "";
+
+              let itemsToShow = [];
+              let cardTitle = '';
+
+              if (type === "volume") {
+                itemsToShow = document.querySelectorAll(".volume-list li");
+                cardTitle = "Volume";
+              } else if (type === "ticket") {
+                itemsToShow = document.querySelectorAll(".ticket-medios-list li");
+                cardTitle = "Ticket Médio";
+              } else if (type === "contratos") {
+                itemsToShow = document.querySelectorAll(".contratos-list li");
+                cardTitle = "Quantidade de Contratos";
+              } else if (type === "maiores") {
+                itemsToShow = document.querySelectorAll(".maiores-contratos-list li");
+                cardTitle = "Maiores Contratos";
+              }
+
+              modalCardTitle.innerText = cardTitle;
+
+              itemsToShow.forEach((item, index) => {
+                if (index < 5) {
+                  const consultorNome = item.querySelector('.consultor-nome').innerText;
+                  const valor = item.querySelector('.valor').innerText;
+
+                  modalDataList.innerHTML += `
+        <li style="margin-bottom: 10px;">
+          <button type="button" class="btn btn-link" style="text-align: left; padding: 0; display: flex; align-items: center;">
+            <img src="img/undraw_profile.svg" alt="${consultorNome}" style="width: 30px; height: 30px; margin-right: 10px;">
+            <div style="flex-grow: 1;">
+              <strong style="color: black;">${consultorNome}</strong>
+              <div style="color: #555;">${valor}</div>
+            </div>
+          </button>
+        </li>
+      `;
+                }
+              });
+
+              // Exibe o modal e o overlay
+              document.getElementById("dataModal").style.display = "block";
+              document.getElementById("modalOverlay").style.display = "block";
+            }
+
+          </script>
+
+
+          <script>
+            // para mostrar os dados do modal da tabela emitidos MODAL-EMITIDOS
+            function openModal(type) {
+              const modalDataList = document.getElementById("modalDataList");
+              modalDataList.innerHTML = "";
+
+              let itemsToShow = [];
+
+              if (type === "volume") {
+                // Pega os itens apenas do card de Volume
+                itemsToShow = document.querySelectorAll(".volume-list li");
+              } else if (type === "ticket") {
+                // Pega os itens apenas do card de Ticket Médio
+                itemsToShow = document.querySelectorAll(".ticket-medios-list li");
+              } else if (type === "contratos") {
+                // Pega os itens apenas do card de Quantidade de Contratos
+                itemsToShow = document.querySelectorAll(".contratos-list li");
+              } else if (type === "maiores") {
+                // Pega os itens apenas do card de Maiores Contratos
+                itemsToShow = document.querySelectorAll(".maiores-contratos-list li");
+              }
+
+              // Adiciona apenas os 5 primeiros itens do tipo selecionado
+              itemsToShow.forEach((item, index) => {
+                if (index < 5) {
+                  modalDataList.innerHTML += `<li>${item.innerHTML}</li>`;
+                }
+              });
+
+              // Exibe o modal e o overlay
+              document.getElementById("dataModal").style.display = "block";
+              document.getElementById("modalOverlay").style.display = "block";
+            }
+
+            function closeModal() {
+              document.getElementById('dataModal').style.display = 'none';
+              document.getElementById('modalOverlay').style.display = 'none';
+            }
+
+            document.addEventListener('DOMContentLoaded', fetchPropostas);
+          </script>
 
 
           <div class="container-fluid">
@@ -606,7 +622,7 @@
               </div>
             </div>
 
-            <!-- Propostas cadastradas -->
+           
 
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -617,7 +633,6 @@
             </div>
             <!-- -- Linha acima é fim container -->
           </div>
-
           <div class="container-fluid">
             <hr>
             <!-- Content Row -->
@@ -714,16 +729,127 @@
                       onclick="toggleDetails(this)">Ver Tudo!</span>
                   </div>
                 </div>
+                
+              </div>
+               <!-- Html do Cadastro Proposta -->
+              <div class="container-fluid">
+                <hr>
+                <!-- Content Row -->
+
+                <div class="row align-items-center mb-4">
+                  <div class="col-4">
+                    <h5>Ranking em Propostas em <br><strong style="color: black;">Cadastradas no Sistema</strong>
+                      <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
+                      <div class="total-cadastro">
+                        <h6 class="total-cadastro"></h6>
+                      </div>
+                    </h5>
+                  </div>
+                  <div class="col-8">
+                    <div class="filters d-flex justify-content-end">
+                      <div class="dropdown me-2">
+                        <select class="form-select" id="consultores" onchange="fetchPropostasCadastro()">
+                          <option value="consultores">Consultores</option>
+                        </select>
+                      </div>
+                      <div class="dropdown me-2">
+                        <select class="form-select" id="mes" onchange="fetchPropostasCadastro()">
+                          <option value="setembro">SETEMBRO</option>
+                          <option value="outubro" selected>OUTUBRO</option>
+                        </select>
+                      </div>
+                      <div class="dropdown">
+                        <select class="form-select" id="ano" onchange="fetchPropostasCadastro()">
+                          <option value="2024" selected>2024</option>
+                          <option value="2023">2023</option>
+                          <option value="2022">2022</option>
+                          <option value="2021">2021</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="card-deck">
+                  <div class="card" id="volume-cadastros" style="width: 18rem;">
+                      <div class="card-body">
+                          <h5 class="card-title" style="font-size: 1rem; color: black;">Volume Cadastrados no Sistema</h5>
+                          <hr>
+                          <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                          <hr>
+                          <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                          <hr>
+                          <div class="text-center">
+                              <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="card" id="ticket-cadastros" style="width: 18rem;">
+                      <div class="card-body">
+                          <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio Cadastradas no Sistema</h5>
+                          <hr>
+                          <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                          <hr>
+                          <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                          <hr>
+                          <div class="text-center">
+                              <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="card" id="quantidade-cadastros" style="width: 18rem;">
+                      <div class="card-body">
+                          <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Propostas</h5>
+                          <hr>
+                          <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                          <hr>
+                          <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                          <hr>
+                          <div class="text-center">
+                              <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                          </div>
+                      </div>
+                  </div>
+              
+                  <div class="card" id="maiores-cadastros" style="width: 18rem;">
+                      <div class="card-body">
+                          <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Contratos</h5>
+                          <hr>
+                          <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                          <hr>
+                          <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                          <hr>
+                          <div class="text-center">
+                              <span style="cursor: pointer; color: #808080; text-decoration: underline;" onclick="toggleDetails(this)">Ver Tudo!</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+    
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+                <!-- Content Row -->
+                <div class="row">
+    
+                  <!-- Acima ta o fim do segundo container  Proposta -->
+                </div>
+                <!-- -- Linha acima é fim container -->
               </div>
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
             <!-- Content Row -->
+             
             <div class="row">
 
               <!-- Acima ta o fim do segundo container  Proposta -->
+
+              
             </div>
             <!-- -- Linha acima é fim container -->
+  
           </div>
         </div>
         <!-- /.container-fluid -->
@@ -811,7 +937,7 @@
 
         const data = await response.json();
 
-        
+
         console.log(data); // Verifique os dados retornados
 
         // Filtra os dados para o mês de outubro de 2024
@@ -990,184 +1116,181 @@
 
   <!-- ------------------------------------------------------------------------------------------------------------- -->
 
-  <!-- Script para o Ranking de Propostas -->
+  <!-- Script para o Ranking de Propostas  Crédito Aprovado -->
   <script>
     async function fetchPropostas() {
-        const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
-        const username = 'dba';
-        const password = 'Yar05710';
-    
-        const headers = new Headers({
-            'Authorization': 'Basic ' + btoa(`${username}:${password}`),
-            'Content-Type': 'application/json'
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
+      const username = 'dba';
+      const password = 'Yar05710';
+      const headers = new Headers({
+        'Authorization': 'Basic ' + btoa(`${username}:${password}`),
+        'Content-Type': 'application/json'
+      });
+
+      try {
+        const response = await fetch(url, {
+          method: 'GET',
+          headers: headers
         });
-    
-        try {
-            const response = await fetch(url, { method: 'GET', headers: headers });
-    
-            if (!response.ok) throw new Error('Erro ao buscar dados da API');
-    
-            const data = await response.json();
-            console.log('Dados retornados:', data); // Verifique os dados
-    
-            // Filtra os dados para o mês de outubro de 2024
-            const filtraData = data.filter(item => {
-                if (!item.dataAprovacaoCredito) return false;
-                const dataAprovacaoCredito = new Date(item.dataAprovacaoCredito);
-                return dataAprovacaoCredito.getFullYear() === 2024 && dataAprovacaoCredito.getMonth() === 9; // Outubro
-            });
-    
-            console.log('Dados filtrados:', filtraData); // Verifique os dados filtrados
-    
-            // Calcula total de propostas e volume total
-            const totalPropostas = filtraData.length;
-            const volumeTotal = filtraData.reduce((acc, item) => {
-                const valor = parseFloat(item.valor) || 0; // Certifique-se de que é um número
-                return acc + valor;
-            }, 0);
-    
-            console.log('Total de Propostas:', totalPropostas);
-            console.log('Volume Total:', volumeTotal); // Verifique o volume total
-    
-            // Função para formatar valores
-            const formatarValor = valor => {
-                return `R$ ${valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
-            };
-    
-            // Atualiza a UI com total de propostas e volume total
-            document.querySelector('.total-credito').innerText = `${totalPropostas} propostas com volume total de ${formatarValor(volumeTotal)}`;
-    
-            // Preenchendo a lista de volume por consultor
-            const volumePorConsultor = {};
-            filtraData.forEach(item => {
-                const consultor = item.consultorMonetare;
-                if (!volumePorConsultor[consultor]) {
-                    volumePorConsultor[consultor] = 0;
-                }
-                volumePorConsultor[consultor] += parseFloat(item.valor) || 0; // Soma garantida como número
-            });
-    
-            const consultoresOrdenadosVolume = Object.keys(volumePorConsultor)
-                .sort((a, b) => volumePorConsultor[b] - volumePorConsultor[a])
-                .slice(0, 5);
-    
-            preencherLista('#volume-proposta .list-unstyled', consultoresOrdenadosVolume, (consultor, index) => `
-                <li class="d-flex align-items-center">
-                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
-                    <div style="flex-grow: 3; text-align: right;">
-                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
-                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(volumePorConsultor[consultor])}</span>
-                    </div>
-                </li>
-            `);
-    
-            // Adicionando ticket médio
-            const ticketMedioPorConsultor = {};
-            filtraData.forEach(item => {
-                const consultor = item.consultorMonetare;
-                if (!ticketMedioPorConsultor[consultor]) {
-                    ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
-                }
-                ticketMedioPorConsultor[consultor].total += parseFloat(item.valor) || 0; // Certifique-se de que é um número
-                ticketMedioPorConsultor[consultor].count += 1;
-            });
-    
-            const ticketMedioArray = Object.keys(ticketMedioPorConsultor)
-                .map(consultor => ({
-                    consultor,
-                    ticketMedio: ticketMedioPorConsultor[consultor].count > 0
-                        ? ticketMedioPorConsultor[consultor].total / ticketMedioPorConsultor[consultor].count
-                        : 0
-                }))
-                .sort((a, b) => b.ticketMedio - a.ticketMedio)
-                .slice(0, 5);
-    
-            preencherLista('#ticket-medio .list-unstyled', ticketMedioArray, (item, index) => `
-                <li class="d-flex align-items-center">
-                    <img src="img/undraw_profile.svg" alt="${item.consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
-                    <div style="flex-grow: 1; text-align: right;">
-                        <strong style="color: black;">${index + 1}º ${item.consultor}</strong>
-                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(item.ticketMedio)}</span>
-                    </div>
-                </li>
-            `);
-    
-            // Adicionando dados ao card de quantidade de contratos
-            const quantidadePorConsultor = {};
-            filtraData.forEach(item => {
-                const consultor = item.consultorMonetare;
-                if (!quantidadePorConsultor[consultor]) {
-                    quantidadePorConsultor[consultor] = 0;
-                }
-                quantidadePorConsultor[consultor]++;
-            });
-    
-            const consultoresOrdenadosQuant = Object.keys(quantidadePorConsultor)
-                .sort((a, b) => quantidadePorConsultor[b] - quantidadePorConsultor[a])
-                .slice(0, 5);
-    
-            preencherLista('#quantidade-propostas .list-unstyled', consultoresOrdenadosQuant, (consultor, index) => `
-                <li class="d-flex align-items-center">
-                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
-                    <div style="flex-grow: 3; text-align: right;">
-                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
-                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidadePorConsultor[consultor]} Contratos</span>
-                    </div>
-                </li>
-            `);
-    
-            // Adicionando dados ao card de maiores contratos
-            const maioresContratosList = document.querySelector('#maiores-propostas .list-unstyled');
-            maioresContratosList.innerHTML = '';
-            const maioresContratos = filtraData.sort((a, b) => b.valor - a.valor);
-    
-            const consultoresExibidos = new Set(); // Para rastrear consultores já exibidos
-            let count = 0; // Contador de consultores exibidos
-    
-            maioresContratos.forEach(item => {
-                const consultor = item.consultorMonetare;
-    
-                // Verifica se o consultor já foi exibido
-                if (!consultoresExibidos.has(consultor)) {
-                    consultoresExibidos.add(consultor); // Marca como exibido
-                    count++; // Incrementa o contador
-    
-                    const maioresItem = `
-                    <li class="d-flex align-items-center">
-                        <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
-                        <div style="flex-grow: 3; text-align: right;">
-                            <strong style="color: black;">${consultoresExibidos.size}º ${consultor}</strong>
-                            <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(item.valor)}</span>
-                        </div>
-                    </li>`;
-    
-                    maioresContratosList.innerHTML += maioresItem;
-    
-                    // Para a iteração se já foram exibidos 5 consultores
-                    if (count >= 5) {
-                        return; // Sai da função forEach
-                    }
-                }
-            });
-    
-        } catch (error) {
-            console.error('Erro:', error);
-        }
+
+        if (!response.ok) throw new Error('Erro ao buscar dados da API');
+
+        const data = await response.json();
+        console.log(data); // Verifique os dados retornados
+
+        // Filtra os dados para o mês de outubro de 2024
+        const filtraData = data.filter(item => {
+          if (!item.dataAprovacaoCredito) return false;
+          const dataAprovacaoCredito = new Date(item.dataAprovacaoCredito);
+          return dataAprovacaoCredito.getFullYear() === 2024 && dataAprovacaoCredito.getMonth() === 9;
+        });
+
+        // Calcula total de propostas e volume total
+        const totalPropostas = filtraData.length;
+        const volumeTotal = filtraData.reduce((acc, item) => acc + (parseFloat(item.valor) || 0), 0); // Certifique-se de que valor é um número
+
+        // Função para formatar valores
+        const formatarValor = valor => {
+          return `R$ ${valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')}`;
+        };
+
+        // Atualiza a UI com total de propostas e volume total
+        document.querySelector('.total-credito').innerText = `${totalPropostas} propostas com volume total de ${formatarValor(volumeTotal)}`;
+
+        // Preenchendo a lista de volume (soma por consultorMonetare)
+        const volumeList = document.querySelector('#volume-proposta .list-unstyled');
+        volumeList.innerHTML = '';
+
+        const volumePorConsultor = {};
+
+        // Soma o volume por consultor
+        filtraData.forEach(item => {
+          const consultor = item.consultorMonetare.substring(0, 10);
+          if (!volumePorConsultor[consultor]) {
+            volumePorConsultor[consultor] = 0;
+          }
+          volumePorConsultor[consultor] += parseFloat(item.valor) || 0;
+        });
+
+        // Ordena consultores por volume e limita a 5
+        const consultoresOrdenados = Object.keys(volumePorConsultor).sort((a, b) => volumePorConsultor[b] - volumePorConsultor[a]).slice(0, 5);
+        consultoresOrdenados.forEach((consultor, index) => {
+          const volumeItem = `
+            <li class="d-flex align-items-center">
+              <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+              <div style="flex-grow: 3; text-align: right;">
+                <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${formatarValor(volumePorConsultor[consultor])}</span>
+              </div>
+            </li>
+          `;
+          volumeList.innerHTML += volumeItem;
+        });
+
+        // Adiciona ticket médio
+        const ticketMedioList = document.querySelector('#ticket-medio .list-unstyled');
+        ticketMedioList.innerHTML = '';
+
+        const ticketMedioPorConsultor = {};
+
+        filtraData.forEach(item => {
+          const consultor = item.consultorMonetare.substring(0, 10);
+          if (!ticketMedioPorConsultor[consultor]) {
+            ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
+          }
+          ticketMedioPorConsultor[consultor].total += parseFloat(item.valor) || 0;
+          ticketMedioPorConsultor[consultor].count += 1;
+        });
+
+        const ticketMedioArray = Object.keys(ticketMedioPorConsultor).map(consultor => {
+          const { total, count } = ticketMedioPorConsultor[consultor];
+          return { consultor, ticketMedio: count > 0 ? total / count : 0 };
+        }).sort((a, b) => b.ticketMedio - a.ticketMedio).slice(0, 5);
+
+        ticketMedioArray.forEach((item, index) => {
+          const ticketMedioItem = `
+            <li class="d-flex align-items-center">
+              <img src="img/undraw_profile.svg" alt="${item.consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+              <div style="flex-grow: 1; text-align: right;">
+                <strong style="color: black;">${index + 1}º ${item.consultor}</strong>
+                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
+                  ${formatarValor(item.ticketMedio)}
+                </span>
+              </div>
+            </li>
+          `;
+          ticketMedioList.innerHTML += ticketMedioItem;
+        });
+
+        // Adiciona dados ao card de quantidade de contratos
+        const quantidadeContratosList = document.querySelector('#quantidade-propostas .list-unstyled');
+        quantidadeContratosList.innerHTML = '';
+        const quantidadePorConsultor = {};
+
+        filtraData.forEach(item => {
+          const consultor = item.consultorMonetare.substring(0, 10);
+          quantidadePorConsultor[consultor] = (quantidadePorConsultor[consultor] || 0) + 1;
+        });
+
+        const consultoresOrdenadosQuant = Object.keys(quantidadePorConsultor).sort((a, b) => quantidadePorConsultor[b] - quantidadePorConsultor[a]).slice(0, 5);
+        consultoresOrdenadosQuant.forEach((consultor, index) => {
+          const quantidadeItem = `
+            <li class="d-flex align-items-center">
+              <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+              <div style="flex-grow: 3; text-align: right;">
+                <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
+                  ${quantidadePorConsultor[consultor]} Contratos
+                </span>
+              </div>
+            </li>
+          `;
+          quantidadeContratosList.innerHTML += quantidadeItem;
+        });
+
+        // Adiciona dados ao card de maiores contratos
+        const maioresContratosList = document.querySelector('#maiores-propostas .list-unstyled');
+        maioresContratosList.innerHTML = '';
+        const maioresContratos = filtraData.sort((a, b) => b.valor - a.valor);
+
+        const consultoresExibidos = new Set(); // Para rastrear consultores já exibidos
+
+        maioresContratos.forEach(item => {
+          // Usado para retringir o tamaho do nome "substring"
+          const consultor = item.consultorMonetare.substring(0, 10);
+
+          // Adiciona o consultor ao conjunto se ainda não foi exibido
+          if (!consultoresExibidos.has(consultor)) {
+            consultoresExibidos.add(consultor);
+
+            const maioresItem = `
+            <li class="d-flex align-items-center">
+                <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                <div style="flex-grow: 3; text-align: right;">
+                    <strong style="color: black;">${consultoresExibidos.size}º ${consultor}</strong>
+                    <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
+                        ${formatarValor(item.valor)}
+                    </span>
+                </div>
+            </li>
+        `;
+            maioresContratosList.innerHTML += maioresItem;
+
+            // Para garantir que exibimos no máximo 5 consultores
+            if (consultoresExibidos.size >= 5) {
+              return; // Interrompe o loop se já temos 5 consultores exibidos
+            }
+          }
+        });
+
+      } catch (error) {
+        console.error('Erro:', error);
+      }
     }
-    
-    // Função auxiliar para preencher listas
-    const preencherLista = (listSelector, data, formatter) => {
-        const listElement = document.querySelector(listSelector);
-        listElement.innerHTML = ''; // Limpa a lista antes de preencher
-        data.forEach((item, index) => {
-            const listItem = formatter(item, index);
-            listElement.innerHTML += listItem;
-        });
-    };
-    
+
     document.addEventListener('DOMContentLoaded', fetchPropostas);
-    </script>
-    
+  </script>
+
 
 
   <!-- // Script para Anális de credito -->
@@ -1180,60 +1303,60 @@
         'Authorization': 'Basic ' + btoa(`${username}:${password}`),
         'Content-Type': 'application/json'
       });
-    
+
       try {
         const response = await fetch(url, { method: 'GET', headers: headers });
-    
+
         if (!response.ok) throw new Error('Erro ao buscar dados da API');
-    
+
         const data = await response.json();
         console.log('Dados recebidos:', data);
-    
+
         // Filtra os dados para Outubro de 2024
         const filtraData = data.filter(item => {
           if (!item.dataEnvioAnaliseBanco) return false;
           const dataEnvio = new Date(item.dataEnvioAnaliseBanco);
           return dataEnvio.getFullYear() === 2024 && dataEnvio.getMonth() === 9; // Outubro
         });
-    
+
         // Atualiza total de propostas e volume total
         const totalPropostas = filtraData.length;
         const volumeTotal = filtraData.reduce((acc, item) => {
           const valor = parseFloat(item.valor);
           return acc + (isNaN(valor) ? 0 : valor);
         }, 0);
-        
+
         document.querySelector('.total-analise').innerText = `${totalPropostas} propostas com Volume Total de R$ ${formatarValor(volumeTotal)}`;
-    
+
         // Atualiza as listas de análise
         AtualizaListas(filtraData);
-        
+
       } catch (error) {
         console.error('Erro:', error);
       }
     }
-    
+
     function formatarValor(valor) {
       return valor.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
     }
-    
+
     function AtualizaListas(data) {
       AtualizaLista('#volume-analise .list-unstyled', data, 'volume');
       AtualizaListaTicketMedio('#ticket-analise .list-unstyled', data);
       AtualizaListaQuantidade('#quantidade-analise .list-unstyled', data);
       AtualizaListaMaiores('#maiores-analise .list-unstyled', data);
     }
-    
+
     function AtualizaLista(cardId, dados, tipo) {
       const volumePorConsultor = {};
       dados.forEach(item => {
-        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        const consultor = item.consultorMonetare.substring(0, 14) || 'Consultor desconhecido';
         volumePorConsultor[consultor] = (volumePorConsultor[consultor] || 0) + parseFloat(item.valor || 0);
       });
-    
+
       const list = document.querySelector(cardId);
       list.innerHTML = '';
-    
+
       const consultoresOrdenados = Object.keys(volumePorConsultor).sort((a, b) => volumePorConsultor[b] - volumePorConsultor[a]).slice(0, 5);
       consultoresOrdenados.forEach((consultor, index) => {
         const item = `
@@ -1248,28 +1371,28 @@
         list.innerHTML += item;
       });
     }
-    
+
     function AtualizaListaTicketMedio(cardId, dados) {
       const ticketMedioPorConsultor = {};
       dados.forEach(item => {
-        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        const consultor = item.consultorMonetare.substring(0, 14) || 'Consultor desconhecido';
         if (!ticketMedioPorConsultor[consultor]) {
           ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
         }
         ticketMedioPorConsultor[consultor].total += parseFloat(item.valor || 0);
         ticketMedioPorConsultor[consultor].count += 1;
       });
-    
+
       const list = document.querySelector(cardId);
       list.innerHTML = '';
-    
+
       const ticketMedioArray = Object.keys(ticketMedioPorConsultor).map(consultor => {
         const total = ticketMedioPorConsultor[consultor].total;
         const count = ticketMedioPorConsultor[consultor].count;
         const ticketMedio = count > 0 ? total / count : 0;
         return { consultor, ticketMedio };
       });
-    
+
       const consultoresOrdenados = ticketMedioArray.sort((a, b) => b.ticketMedio - a.ticketMedio).slice(0, 5);
       consultoresOrdenados.forEach((item, index) => {
         const ticketMedioItem = `
@@ -1284,17 +1407,17 @@
         list.innerHTML += ticketMedioItem;
       });
     }
-    
+
     function AtualizaListaQuantidade(cardId, dados) {
       const quantidadePorConsultor = {};
       dados.forEach(item => {
-        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        const consultor = item.consultorMonetare.substring(0, 14) || 'Consultor desconhecido';
         quantidadePorConsultor[consultor] = (quantidadePorConsultor[consultor] || 0) + 1;
       });
-    
+
       const list = document.querySelector(cardId);
       list.innerHTML = '';
-    
+
       const consultoresOrdenados = Object.keys(quantidadePorConsultor).sort((a, b) => quantidadePorConsultor[b] - quantidadePorConsultor[a]).slice(0, 5);
       consultoresOrdenados.forEach((consultor, index) => {
         const quantidadeItem = `
@@ -1309,16 +1432,16 @@
         list.innerHTML += quantidadeItem;
       });
     }
-    
+
     function AtualizaListaMaiores(cardId, dados) {
       const list = document.querySelector(cardId);
       list.innerHTML = '';
-    
+
       const maioresContratos = dados.sort((a, b) => b.valor - a.valor).slice(0, 5);
       const consultoresExibidos = new Set();
-    
+
       maioresContratos.forEach(item => {
-        const consultor = item.consultorMonetare || 'Consultor desconhecido';
+        const consultor = item.consultorMonetare.substring(0, 10) || 'Consultor desconhecido';
         if (!consultoresExibidos.has(consultor)) {
           consultoresExibidos.add(consultor);
           const maioresItem = `
@@ -1331,56 +1454,259 @@
             </li>
           `;
           list.innerHTML += maioresItem;
+        
+          
         }
       });
     }
-    
+
     document.addEventListener('DOMContentLoaded', fetchPropostas);
-    </script>
-    
-  
-<!-- Script do modal -->
+  </script>
 
-<script>
-  // Adicione esta função ao seu script existente
-function mostrarModal(dados) {
-    const modal = document.getElementById('modal');
-    const detalhesList = document.getElementById('detalhes-list');
 
-    // Limpa a lista antes de adicionar novos dados
-    detalhesList.innerHTML = '';
+  <!-- Script cadastros no sistema -->
+  <script>
+    async function fetchPropostasCadastro() {
+        const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
+        const username = 'dba';
+        const password = 'Yar05710';
+        const headers = new Headers({
+            'Authorization': 'Basic ' + btoa(`${username}:${password}`),
+            'Content-Type': 'application/json'
+        });
 
-    // Preenche a lista com os dados
-    dados.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `Consultor: ${item.consultorMonetare}, Valor: ${formatarValor(item.valor)}`;
-        detalhesList.appendChild(listItem);
-    });
+        try {
+            const response = await fetch(url, { method: 'GET', headers: headers });
 
-    // Mostra o modal
-    modal.style.display = 'block';
-}
+            if (!response.ok) throw new Error('Erro ao buscar dados da API');
 
-// Função para fechar o modal
-document.querySelector('.close').onclick = function() {
-    document.getElementById('modal').style.display = 'none';
-}
+            const data = await response.json();
+            console.log('Dados recebidos:', data);
 
-// Fecha o modal se o usuário clicar fora dele
-window.onclick = function(event) {
-    const modal = document.getElementById('modal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
+            // Filtra os dados para Outubro de 2024
+            const cadastroFiltraData = data.filter(item => {
+                if (!item.dataCadastro) return false;
+                const dataEnvio = new Date(item.dataCadastro);
+                return dataEnvio.getFullYear() === 2024 && dataEnvio.getMonth() === 9; // Outubro
+            });
+
+            // Atualiza total de propostas e volume total
+            const totalPropostasCadastro = cadastroFiltraData.length;
+            const volumeTotalCadastro = cadastroFiltraData.reduce((acc, item) => {
+                const valor = parseFloat(item.valor);
+                return acc + (isNaN(valor) ? 0 : valor);
+            }, 0);
+
+            document.querySelector('.total-cadastro').innerText = `${totalPropostasCadastro} propostas com Volume Total de R$ ${formatarValor(volumeTotalCadastro)}`;
+
+            // Atualiza as listas de cadastro
+            atualizaListasCadastro(cadastroFiltraData);
+
+        } catch (error) {
+            console.error('Erro:', error);
+        }
     }
+
+    function atualizaListasCadastro(data) {
+        atualizaVolumePorConsultor('#volume-cadastros .list-unstyled', data);
+        atualizaTicketMedioPorConsultor('#ticket-cadastros .list-unstyled', data);
+        atualizaQuantidadePorConsultor('#quantidade-cadastros .list-unstyled', data);
+        atualizaMaioresContratosCadastro('#maiores-cadastros .list-unstyled', data);
+    }
+
+    function atualizaVolumePorConsultor(cardId, dados) {
+        const volumePorConsultor = {};
+        dados.forEach(item => {
+            const consultor = item.consultorMonetare.substring(0, 14) || 'Consultor desconhecido';
+            volumePorConsultor[consultor] = (volumePorConsultor[consultor] || 0) + parseFloat(item.valor || 0);
+        });
+
+        const list = document.querySelector(cardId);
+        list.innerHTML = '';
+
+        const consultoresOrdenados = Object.keys(volumePorConsultor).sort((a, b) => volumePorConsultor[b] - volumePorConsultor[a]).slice(0, 5);
+        consultoresOrdenados.forEach((consultor, index) => {
+            const item = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${formatarValor(volumePorConsultor[consultor])}</span>
+                    </div>
+                </li>
+            `;
+            list.innerHTML += item;
+        });
+    }
+
+    function atualizaTicketMedioPorConsultor(cardId, dados) {
+        const ticketMedioPorConsultor = {};
+        dados.forEach(item => {
+            const consultor = item.consultorMonetare.substring(0, 14) || 'Consultor desconhecido';
+            if (!ticketMedioPorConsultor[consultor]) {
+                ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
+            }
+            ticketMedioPorConsultor[consultor].total += parseFloat(item.valor || 0);
+            ticketMedioPorConsultor[consultor].count += 1;
+        });
+
+        const list = document.querySelector(cardId);
+        list.innerHTML = '';
+
+        const ticketMedioArray = Object.keys(ticketMedioPorConsultor).map(consultor => {
+            const total = ticketMedioPorConsultor[consultor].total;
+            const count = ticketMedioPorConsultor[consultor].count;
+            const ticketMedio = count > 0 ? total / count : 0;
+            return { consultor, ticketMedio };
+        });
+
+        const consultoresOrdenados = ticketMedioArray.sort((a, b) => b.ticketMedio - a.ticketMedio).slice(0, 5);
+        consultoresOrdenados.forEach((item, index) => {
+            const ticketMedioItem = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${item.consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${item.consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${formatarValor(item.ticketMedio)}</span>
+                    </div>
+                </li>
+            `;
+            list.innerHTML += ticketMedioItem;
+        });
+    }
+
+    function atualizaQuantidadePorConsultor(cardId, dados) {
+        const quantidadePorConsultor = {};
+        dados.forEach(item => {
+            const consultor = item.consultorMonetare.substring(0, 14) || 'Consultor desconhecido';
+            quantidadePorConsultor[consultor] = (quantidadePorConsultor[consultor] || 0) + 1;
+        });
+
+        const list = document.querySelector(cardId);
+        list.innerHTML = '';
+
+        const consultoresOrdenados = Object.keys(quantidadePorConsultor).sort((a, b) => quantidadePorConsultor[b] - quantidadePorConsultor[a]).slice(0, 5);
+        consultoresOrdenados.forEach((consultor, index) => {
+            const quantidadeItem = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">${quantidadePorConsultor[consultor]} Proposta(s)</span>
+                    </div>
+                </li>
+            `;
+            list.innerHTML += quantidadeItem;
+        });
+    }
+
+    function atualizaMaioresContratosCadastro(cardId, dados) {
+    const list = document.querySelector(cardId);
+    list.innerHTML = '';
+
+    // Ordena os contratos e pega os 5 maiores
+    const maioresContratos = dados.sort((a, b) => b.valor - a.valor);
+    const consultoresExibidos = new Set(); // Para rastrear consultores já exibidos
+
+    maioresContratos.forEach(item => {
+        const consultor = item.consultorMonetare.substring(0, 10) || 'Consultor desconhecido';
+
+        // Adiciona o consultor ao conjunto se ainda não foi exibido
+        if (!consultoresExibidos.has(consultor)) {
+            consultoresExibidos.add(consultor);
+            const maioresItem = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                        <strong style="color: black;">${consultoresExibidos.size}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">R$ ${formatarValor(item.valor)}</span>
+                    </div>
+                </li>
+            `;
+            list.innerHTML += maioresItem;
+        }
+
+        // Para garantir que exibimos no máximo 5 consultores
+        if (consultoresExibidos.size >= 5) {
+            return; // Interrompe o loop se já temos 5 consultores exibidos
+        }
+    });
 }
 
-// Adicione um evento de clique no botão "Ver Tudo"
-document.getElementById('ver-tudo-btn').onclick = function() {
-    mostrarModal(filtraData); // Passa os dados filtrados para a função
-}
 
+    document.addEventListener('DOMContentLoaded', fetchPropostasCadastro);
 </script>
 
+
+
+
+
+   
+
+  <!-- Script do modal -->
+
+  <script>
+    document.getElementById('ver-tudo-btn').addEventListener('click', function () {
+      document.getElementById('ranking-modal').style.display = 'block';
+      fetchPropostas(); // Chama a função para carregar os dados no modal
+    });
+
+    document.querySelector('.close').addEventListener('click', function () {
+      document.getElementById('ranking-modal').style.display = 'none';
+    });
+
+    document.getElementById('fechar-modal').addEventListener('click', function () {
+      document.getElementById('ranking-modal').style.display = 'none';
+    });
+
+    window.onclick = function (event) {
+      if (event.target == document.getElementById('ranking-modal')) {
+        document.getElementById('ranking-modal').style.display = 'none';
+      }
+    };
+
+  </script>
+
+  <style>
+    .modal {
+      display: none;
+      /* Escondido por padrão */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Fundo semitransparente */
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
