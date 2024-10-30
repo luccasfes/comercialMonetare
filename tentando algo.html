@@ -78,7 +78,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="buttons.html">Produção</a>
             <a class="collapse-item" href="index.html">Comercial</a>
-            <a class="collapse-item" href="responsavelAnalise.html">Operacional</a>
+            <a class="collapse-item" href="cards.html">Operacional</a>
             <a class="collapse-item" href="cards.html">Parceiros</a>
           </div>
         </div>
@@ -294,33 +294,32 @@
         <!-- End of Topbar -->
 
         <!-- Begin Page Content -->
-        <div class="container-fluid">
+        <div class="container-fluid my-container">
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Dashboard <strong style="color: black;">COMERCIAL</strong></h1>
           </div>
           <hr>
-
           <!-- Content Row -->
-          <div class="row">
-            <div class="col-xl-3 col-md-6 mb-4">
+          <div class="row align-items-center mb-4">
+            <div class="col-4">
               <h5>Ranking em Contratos <strong style="color: black;">Emitidos</strong>
                 <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
                 <h6 class="total-propostas">propostas com Volume Total de</h6>
                 <h6 class="volume-total"></h6>
+
               </h5>
             </div>
-
-            <div class="col-md-9 col-11"> <!-- 9 para PC e 12 para mobile -->
-              <div class="filters d-flex justify-content-end mb-4 flex-wrap">
+            <div class="col-8">
+              <div class="filters d-flex justify-content-end">
                 <div class="dropdown me-2">
                   <select class="form-select">
                     <option value="consultores">Consultores</option>
                   </select>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown me-2">
                   <select class="form-select">
-                    <option value="setembro">SETEMBRO</option>
+                    <option value="outubro">SETEMBRO</option>
                     <option value="outubro" selected>OUTUBRO</option>
                   </select>
                 </div>
@@ -333,143 +332,137 @@
             </div>
           </div>
 
-
           <div class="card-deck">
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-dark shadow h-100 py-2">
-                <div class="card-body">
-
-                  <h5 class="card-title text-info text-dark style=" font-size: 1rem;>Volume</h5>
-                  <p class="card-text total-propostas" style="font-size: 0.9rem;">Emitidos em OUTUBRO</p>
-                  <hr>
-                  <ul class="list-unstyled volume-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                  <div class="text-center">
-                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                      onclick="openModal('volume')">Ver Tudo!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <h5 class="card-title text-info text-uppercase" style="font-size: 1rem;">Ticket Médio</h5>
-                  <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
-                  <hr>
-                  <ul class="list-unstyled ticket-medios-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                  <div class="text-center">
-                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                      onclick="openModal('ticket')">Ver Tudo!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <h5 class="card-title text-success text-uppercase" style="font-size: 1rem;">Quantidade de Contratos
-                  </h5>
-                  <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
-                  <hr>
-                  <ul class="list-unstyled contratos-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                  <div class="text-center">
-                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                      onclick="openModal('contratos')">Ver Tudo!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <h5 class="card-title text-warning text-uppercase" style="font-size: 1rem;">Maiores Contratos</h5>
-                  <p class="card-text" style="font-size: 0.9rem;">Emitidos em Outubro</p>
-                  <hr>
-                  <ul class="list-unstyled maiores-contratos-list" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                  </ul>
-                  <div class="text-center">
-                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                      onclick="openModal('maiores')">Ver Tudo!</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Modal Emitidos -->
-            <div class="modal" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
-              aria-hidden="true"
-              style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px; max-height: 500px; overflow-y: auto;">
-
-              <div class="modal-header" style="padding: 10px; border-bottom: 1px solid #ccc;">
-                <h5 class="modal-title" id="modalLabel" style="color: black;">Ranking Completo</h5>
-                <button type="button" style="border: none; background: none; cursor: pointer;"
-                  onclick="closeModal()">&times;</button>
-              </div>
-
-              <div class="modal-body" style="padding: 20px;">
-                <h5 id="modalCardTitle" style="margin-bottom: 5px; color: black; text-align: center;"></h5>
-                <p id="modalCardSubtitle" style="margin: 0; color: #555; text-align: center;">Emitidos em Outubro</p>
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem; color: black;">Volume</h5>
                 <hr>
-                <ul class="list-unstyled" id="modalDataList">
-                  <!-- Itens serão inseridos aqui pelo JavaScript -->
-                </ul>
-              </div>
-
-              <div class="modal-footer" style="padding: 10px; border-top: 1px solid #ccc; text-align: center;">
-                <button type="button" class="btn btn-secondary"
-                  style="padding: 10px 20px; font-size: 1rem; display: flex; justify-content: center; align-items: center;"
-                  onclick="closeModal()">
-                  <span style="margin: 0;">Fechar</span>
-                </button>
+                <p class="card-text total-propostas" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                <hr>
+                <ul class="list-unstyled volume-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <hr>
+                <div class="text-center">
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('volume')">Ver Tudo!</button>
+                </div>
               </div>
             </div>
 
-
-            <div id="modalOverlay"
-              style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio</h5>
+                <hr>
+                <p class="card-text">Emitidos em Outubro</p>
+                <hr>
+                <ul class="list-unstyled ticket-medios-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <hr>
+                <div class="text-center">
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('ticket')">Ver Tudo!</button>
+                </div>
+              </div>
             </div>
 
-
-            <div id="modalOverlay"
-              style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Contratos</h5>
+                <hr>
+                <p class="card-text">Emitidos em Outubro</p>
+                <hr>
+                <ul class="list-unstyled contratos-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <hr>
+                <div class="text-center">
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('contratos')">Ver Tudo!</button>
+                </div>
+              </div>
             </div>
 
-            <script>
-              function openModal(type) {
-                const modalDataList = document.getElementById("modalDataList");
-                const modalCardTitle = document.getElementById("modalCardTitle");
-                modalDataList.innerHTML = "";
+            <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Contratos</h5>
+                <hr>
+                <p class="card-text">Emitidos em Outubro</p>
+                <hr>
+                <ul class="list-unstyled maiores-contratos-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                <hr>
+                <div class="text-center">
+                  <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                    onclick="openModal('maiores')">Ver Tudo!</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                let itemsToShow = [];
-                let cardTitle = '';
+          <!-- Modal Emitidos -->
+          <div class="modal" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true"
+            style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px; max-height: 500px; overflow-y: auto;">
 
-                if (type === "volume") {
-                  itemsToShow = document.querySelectorAll(".volume-list li");
-                  cardTitle = "Volume";
-                } else if (type === "ticket") {
-                  itemsToShow = document.querySelectorAll(".ticket-medios-list li");
-                  cardTitle = "Ticket Médio";
-                } else if (type === "contratos") {
-                  itemsToShow = document.querySelectorAll(".contratos-list li");
-                  cardTitle = "Quantidade de Contratos";
-                } else if (type === "maiores") {
-                  itemsToShow = document.querySelectorAll(".maiores-contratos-list li");
-                  cardTitle = "Maiores Contratos";
-                }
+            <div class="modal-header" style="padding: 10px; border-bottom: 1px solid #ccc;">
+              <h5 class="modal-title" id="modalLabel" style="color: black;">Ranking Completo</h5>
+              <button type="button" style="border: none; background: none; cursor: pointer;"
+                onclick="closeModal()">&times;</button>
+            </div>
 
-                modalCardTitle.innerText = cardTitle;
+            <div class="modal-body" style="padding: 20px;">
+              <h5 id="modalCardTitle" style="margin-bottom: 5px; color: black; text-align: center;"></h5>
+              <p id="modalCardSubtitle" style="margin: 0; color: #555; text-align: center;">Emitidos em Outubro</p>
+              <hr>
+              <ul class="list-unstyled" id="modalDataList">
+                <!-- Itens serão inseridos aqui pelo JavaScript -->
+              </ul>
+            </div>
 
-                itemsToShow.forEach((item, index) => {
-                  if (index < 5) {
-                    const consultorNome = item.querySelector('.consultor-nome').innerText;
-                    const valor = item.querySelector('.valor').innerText;
+            <div class="modal-footer" style="padding: 10px; border-top: 1px solid #ccc; text-align: center;">
+              <button type="button" class="btn btn-secondary"
+                style="padding: 10px 20px; font-size: 1rem; display: flex; justify-content: center; align-items: center;"
+                onclick="closeModal()">
+                <span style="margin: 0;">Fechar</span>
+              </button>
+            </div>
+          </div>
 
-                    modalDataList.innerHTML += `
+
+          <div id="modalOverlay"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
+          </div>
+
+
+          <div id="modalOverlay"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
+          </div>
+
+          <script>
+            function openModal(type) {
+              const modalDataList = document.getElementById("modalDataList");
+              const modalCardTitle = document.getElementById("modalCardTitle");
+              modalDataList.innerHTML = "";
+
+              let itemsToShow = [];
+              let cardTitle = '';
+
+              if (type === "volume") {
+                itemsToShow = document.querySelectorAll(".volume-list li");
+                cardTitle = "Volume";
+              } else if (type === "ticket") {
+                itemsToShow = document.querySelectorAll(".ticket-medios-list li");
+                cardTitle = "Ticket Médio";
+              } else if (type === "contratos") {
+                itemsToShow = document.querySelectorAll(".contratos-list li");
+                cardTitle = "Quantidade de Contratos";
+              } else if (type === "maiores") {
+                itemsToShow = document.querySelectorAll(".maiores-contratos-list li");
+                cardTitle = "Maiores Contratos";
+              }
+
+              modalCardTitle.innerText = cardTitle;
+
+              itemsToShow.forEach((item, index) => {
+                if (index < 5) {
+                  const consultorNome = item.querySelector('.consultor-nome').innerText;
+                  const valor = item.querySelector('.valor').innerText;
+
+                  modalDataList.innerHTML += `
         <li style="margin-bottom: 10px;">
           <button type="button" class="btn btn-link" style="text-align: left; padding: 0; display: flex; align-items: center;">
             <img src="img/undraw_profile.svg" alt="${consultorNome}" style="width: 30px; height: 30px; margin-right: 10px;">
@@ -480,47 +473,272 @@
           </button>
         </li>
       `;
+                }
+              });
+
+              // Exibe o modal e o overlay
+              document.getElementById("dataModal").style.display = "block";
+              document.getElementById("modalOverlay").style.display = "block";
+            }
+
+          </script>
+
+          <!-- Script de emitidos -->
+          <script>
+            // para mostrar os dados do modal da tabela emitidos MODAL-EMITIDOS
+            function openModal(type) {
+              const modalDataList = document.getElementById("modalDataList");
+              modalDataList.innerHTML = "";
+
+              let itemsToShow = [];
+
+              if (type === "volume") {
+                // Pega os itens apenas do card de Volume
+                itemsToShow = document.querySelectorAll(".volume-list li");
+              } else if (type === "ticket") {
+                // Pega os itens apenas do card de Ticket Médio
+                itemsToShow = document.querySelectorAll(".ticket-medios-list li");
+              } else if (type === "contratos") {
+                // Pega os itens apenas do card de Quantidade de Contratos
+                itemsToShow = document.querySelectorAll(".contratos-list li");
+              } else if (type === "maiores") {
+                // Pega os itens apenas do card de Maiores Contratos
+                itemsToShow = document.querySelectorAll(".maiores-contratos-list li");
+              }
+
+              // Adiciona apenas os 5 primeiros itens do tipo selecionado
+              itemsToShow.forEach((item, index) => {
+                if (index < 5) {
+                  modalDataList.innerHTML += `<li>${item.innerHTML}</li>`;
+                }
+              });
+
+              // Exibe o modal e o overlay
+              document.getElementById("dataModal").style.display = "block";
+              document.getElementById("modalOverlay").style.display = "block";
+            }
+
+            function closeModal() {
+              document.getElementById('dataModal').style.display = 'none';
+              document.getElementById('modalOverlay').style.display = 'none';
+            }
+
+            document.addEventListener('DOMContentLoaded', fetchPropostas);
+          </script>
+
+
+          <div class="container-fluid">
+            <hr>
+            <!-- Content Row -->
+            <div class="row align-items-center mb-4">
+              <div class="col-4">
+                <h5>Ranking em Propostas com <br><strong style="color: black;">Crédito Aprovado</strong>
+                  <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
+                </h5>
+                <h6 class="total-credito">propostas com Volume Total de</h6>
+              </div>
+              <div class="col-8">
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown me-2">
+                    <select class="form-select">
+                      <option value="consultores">Consultores</option>
+                    </select>
+                  </div>
+                  <div class="dropdown me-2">
+                    <select class="form-select">
+                      <option value="setembro">SETEMBRO</option>
+                      <option value="outubro" selected>OUTUBRO</option>
+                    </select>
+                  </div>
+                  <div class="dropdown">
+                    <select class="form-select">
+                      <option value="2024">2024</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-deck">
+              <div class="card" id="volume-proposta" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Volume Proposta</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled volume-propostas-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalProposta('volume')">Ver Tudo!</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="ticket-medio" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio Proposta</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled ticket-medios-propostas-list"
+                    style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalProposta('ticket')">Ver Tudo!</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="quantidade-propostas" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Propostas</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled quantidade-propostas-list" style="font-size: 0.9rem; margin-bottom: 1rem;">
+                  </ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalProposta('quantidade')">Ver Tudo!</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="maiores-propostas" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Propostas</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled maiores-propostas-list" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalProposta('maiores')">Ver Tudo!</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal e script do proposta -->
+            <!-- Modal Propostas -->
+            <div class="modal" id="dataModalPropostas" tabindex="-1" role="dialog" aria-labelledby="modalPropostasLabel"
+              aria-hidden="true"
+              style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px; max-height: 500px; overflow-y: auto;">
+
+              <div class="modal-header" style="padding: 10px; border-bottom: 1px solid #ccc;">
+                <h5 class="modal-title" id="modalPropostasLabel" style="color: black;">Ranking Completo</h5>
+                <button type="button" style="border: none; background: none; cursor: pointer;"
+                  onclick="closeModalProposta()">&times;</button>
+              </div>
+
+              <div class="modal-body" style="padding: 20px;">
+                <h5 id="modalPropostasCardTitle" style="margin-bottom: 5px; color: black; text-align: center;"></h5>
+                <p id="modalPropostasCardSubtitle" style="margin: 0; color: #555; text-align: center;">com Crédito
+                  Aprovado em OUTUBRO</p>
+                <hr>
+                <ul class="list-unstyled" id="modalPropostasDataList">
+                  <!-- Itens serão inseridos aqui pelo JavaScript -->
+                </ul>
+              </div>
+
+              <div class="modal-footer" style="padding: 10px; border-top: 1px solid #ccc; text-align: center;">
+                <button type="button" class="btn btn-secondary"
+                  style="padding: 10px 20px; font-size: 1rem; display: flex; justify-content: center; align-items: center;"
+                  onclick="closeModalProposta()">
+                  <span style="margin: 0;">Fechar</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="modalPropostasOverlay"
+              style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
+            </div>
+
+            <script>
+              function openModalProposta(type) {
+                const modalDataList = document.getElementById("modalDataList");
+                const modalCardTitle = document.getElementById("modalCardTitle");
+                modalDataList.innerHTML = "";
+
+                let itemsToShow = [];
+                let cardTitle = '';
+
+                if (type === "volume") {
+                  itemsToShow = document.querySelectorAll(".volume-propostas-list li");
+                  cardTitle = "Volume Proposta";
+                } else if (type === "ticket") {
+                  itemsToShow = document.querySelectorAll(".ticket-medios-propostas-list li");
+                  cardTitle = "Ticket Médio Proposta";
+                } else if (type === "quantidade") {
+                  itemsToShow = document.querySelectorAll(".quantidade-propostas-list li");
+                  cardTitle = "Quantidade de Propostas";
+                } else if (type === "maiores") {
+                  itemsToShow = document.querySelectorAll(".maiores-propostas-list li");
+                  cardTitle = "Maiores Propostas";
+                }
+
+                modalCardTitle.innerText = cardTitle;
+
+                itemsToShow.forEach((item, index) => {
+                  if (index < 5) {
+                    const consultorNome = item.querySelector('.consultor-nome').innerText;
+                    const valor = item.querySelector('.valor').innerText;
+
+                    modalDataList.innerHTML += `
+                      <li style="margin-bottom: 10px;">
+                        <button type="button" class="btn btn-link" style="text-align: left; padding: 0; display: flex; align-items: center;">
+                          <img src="img/undraw_profile.svg" alt="${consultorNome}" style="width: 30px; height: 30px; margin-right: 10px;">
+                          <div style="flex-grow: 1;">
+                            <strong style="color: black;">${consultorNome}</strong>
+                            <div style="color: #555;">${valor}</div>
+                          </div>
+                        </button>
+                      </li>
+                    `;
                   }
                 });
 
-                // Exibe o modal e o overlay
+                // Display the modal and overlay
                 document.getElementById("dataModal").style.display = "block";
                 document.getElementById("modalOverlay").style.display = "block";
               }
-
             </script>
 
-            <!-- Script de emitidos -->
+
             <script>
-              // para mostrar os dados do modal da tabela emitidos MODAL-EMITIDOS
-              function openModal(type) {
+              // Function to show the data in the modal for the Propostas section
+              function openModalProposta(type) {
                 const modalDataList = document.getElementById("modalDataList");
                 modalDataList.innerHTML = "";
 
                 let itemsToShow = [];
 
                 if (type === "volume") {
-                  // Pega os itens apenas do card de Volume
-                  itemsToShow = document.querySelectorAll(".volume-list li");
+                  // Get items from the Volume Proposta card
+                  itemsToShow = document.querySelectorAll(".volume-propostas-list li");
                 } else if (type === "ticket") {
-                  // Pega os itens apenas do card de Ticket Médio
-                  itemsToShow = document.querySelectorAll(".ticket-medios-list li");
-                } else if (type === "contratos") {
-                  // Pega os itens apenas do card de Quantidade de Contratos
-                  itemsToShow = document.querySelectorAll(".contratos-list li");
+                  // Get items from the Ticket Médio Proposta card
+                  itemsToShow = document.querySelectorAll(".ticket-medios-propostas-list li");
+                } else if (type === "quantidade") {
+                  // Get items from the Quantidade de Propostas card
+                  itemsToShow = document.querySelectorAll(".quantidade-propostas-list li");
                 } else if (type === "maiores") {
-                  // Pega os itens apenas do card de Maiores Contratos
-                  itemsToShow = document.querySelectorAll(".maiores-contratos-list li");
+                  // Get items from the Maiores Propostas card
+                  itemsToShow = document.querySelectorAll(".maiores-propostas-list li");
                 }
 
-                // Adiciona apenas os 5 primeiros itens do tipo selecionado
+                // Add only the first 5 items of the selected type
                 itemsToShow.forEach((item, index) => {
                   if (index < 5) {
                     modalDataList.innerHTML += `<li>${item.innerHTML}</li>`;
                   }
                 });
 
-                // Exibe o modal e o overlay
+                // Show the modal and the overlay
                 document.getElementById("dataModal").style.display = "block";
                 document.getElementById("modalOverlay").style.display = "block";
               }
@@ -533,356 +751,110 @@
               document.addEventListener('DOMContentLoaded', fetchPropostas);
             </script>
 
-
-            <div class="container-fluid">
-              <hr>
-              <!-- Content Row -->
-              <div class="row align-items-center mb-4">
-                <div class="col-xl-3 col-md-6 mb-4">                 
-                  <h5>Ranking em Propostas com <br><strong style="color: black;">Crédito Aprovado</strong>
-                    <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
-                  </h5>
-                  <h6 class="total-credito">propostas com Volume Total de</h6>
-                </div>
-
-                <div class="col-md-9 col-11"> <!-- 9 para PC e 12 para mobile -->
-                  <div class="filters d-flex justify-content-end mb-4 flex-wrap">
-                    <div class="dropdown">
-                      <select class="form-select">
-                        <option value="consultores">Consultores</option>
-                      </select>
-                    </div>
-                    <div class="dropdown">
-                      <select class="form-select">
-                        <option value="setembro">SETEMBRO</option>
-                        <option value="outubro" selected>OUTUBRO</option>
-                      </select>
-                    </div>
-                    <div class="dropdown">
-                      <select class="form-select">
-                        <option value="2024">2024</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="card-deck">
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-dark shadow h-100 py-2" id="volume-proposta">
-                    <div class="card-body">
-                      <h5 class="card-title text-dark text-uppercase" style="font-size: 1rem;">Volume Proposta</h5>
-                      <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled volume-propostas-list" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                      </ul>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalProposta('volume')">Ver Tudo!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-info shadow h-100 py-2" id="ticket-medio">
-                    <div class="card-body">
-                      <h5 class="card-title text-info text-uppercase" style="font-size: 1rem;">Ticket Médio Proposta
-                      </h5>
-                      <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled ticket-medios-propostas-list"
-                        style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalProposta('ticket')">Ver Tudo!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-success shadow h-100 py-2" id="quantidade-propostas">
-                    <div class="card-body">
-                      <h5 class="card-title text-success text-uppercase" style="font-size: 1rem;">Quantidade de
-                        Propostas</h5>
-                      <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled quantidade-propostas-list"
-                        style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalProposta('quantidade')">Ver Tudo!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-warning shadow h-100 py-2" id="maiores-propostas">
-                    <div class="card-body">
-                      <h5 class="card-title text-warning text-uppercase" style="font-size: 1rem;">Maiores Propostas</h5>
-                      <p class="card-text" style="font-size: 0.9rem;">com Crédito Aprovado em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled maiores-propostas-list" style="font-size: 0.9rem; margin-bottom: 1rem;">
-                      </ul>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalProposta('maiores')">Ver Tudo!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-
-              <!-- Modal e script do proposta -->
-              <!-- Modal Propostas -->
-              <div class="modal" id="dataModalProposta" tabindex="-1" role="dialog" aria-labelledby="modalPropostaLabel"
-                aria-hidden="true"
-                style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); width: 100%; max-width: 400px; max-height: 500px; overflow-y: auto;">
-
-                <div class="modal-header" style="padding: 10px; border-bottom: 1px solid #ccc;">
-                  <h5 class="modal-title" id="modalPropostaLabel" style="color: black;">Análise de Propostas</h5>
-                  <button type="button" style="border: none; background: none; cursor: pointer;"
-                    onclick="closeModalProposta()">&times;</button>
-                </div>
-
-                <div class="modal-body" style="padding: 20px;">
-                  <h5 id="modalPropostaCardTitle" style="margin-bottom: 5px; color: black; text-align: center;"></h5>
-                  <p id="modalPropostaCardSubtitle" style="margin: 0; color: #555; text-align: center;">Com Crédito
-                    Aprovado em OUTUBRO</p>
-                  <hr>
-                  <ul class="list-unstyled" id="modalPropostaDataList">
-                    <!-- Itens serão inseridos aqui pelo JavaScript -->
-                  </ul>
-                </div>
-
-                <div class="modal-footer" style="padding: 10px; border-top: 1px solid #ccc; text-align: center;">
-                  <button type="button" class="btn btn-secondary"
-                    style="padding: 10px 20px; font-size: 1rem; display: flex; justify-content: center; align-items: center;"
-                    onclick="closeModalProposta()">
-                    <span style="margin: 0;">Fechar</span>
-                  </button>
-                </div>
-              </div>
-
-              <div id="modalPropostaOverlay"
-                style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 1040;">
-              </div>
-
-              <script>
-                function openModalProposta(type) {
-                  const modalDataList = document.getElementById("modalPropostaDataList");
-                  const modalCardTitle = document.getElementById("modalPropostaCardTitle");
-                  modalDataList.innerHTML = "";
-
-                  let itemsToShow = [];
-                  let cardTitle = '';
-
-                  if (type === "volume") {
-                    itemsToShow = document.querySelectorAll(".volume-propostas-list li");
-                    cardTitle = "Volume Proposta";
-                  } else if (type === "ticket") {
-                    itemsToShow = document.querySelectorAll(".ticket-medios-propostas-list li");
-                    cardTitle = "Ticket Médio Proposta";
-                  } else if (type === "quantidade") {
-                    itemsToShow = document.querySelectorAll(".quantidade-propostas-list li");
-                    cardTitle = "Quantidade de Propostas";
-                  } else if (type === "maiores") {
-                    itemsToShow = document.querySelectorAll(".maiores-propostas-list li");
-                    cardTitle = "Maiores Propostas";
-                  }
-
-                  modalCardTitle.innerText = cardTitle;
-
-                  itemsToShow.forEach((item, index) => {
-                    if (index < 5) {
-                      const consultorNome = item.querySelector('.consultor-nome')?.innerText || 'Nome do Consultor';
-                      const valor = item.querySelector('.valor')?.innerText || 'Valor não disponível';
-
-                      modalDataList.innerHTML += `
-                            <li style="margin-bottom: 10px;">
-                                <button type="button" class="btn btn-link" style="text-align: left; padding: 0; display: flex; align-items: center;">
-                                    <img src="img/undraw_profile.svg" alt="${consultorNome}" style="width: 30px; height: 30px; margin-right: 10px;">
-                                    <div style="flex-grow: 1;">
-                                        <strong style="color: black;">${consultorNome}</strong>
-                                        <div style="color: #555;">${valor}</div>
-                                    </div>
-                                </button>
-                            </li>
-                        `;
-                    }
-                  });
-
-                  // Display the modal and overlay
-                  document.getElementById("dataModalProposta").style.display = "block";
-                  document.getElementById("modalPropostaOverlay").style.display = "block";
-                }
-
-                function closeModalProposta() {
-                  document.getElementById("dataModalProposta").style.display = "none";
-                  document.getElementById("modalPropostaOverlay").style.display = "none";
-                }
-              </script>
-
-
-
-              <script>
-                // Function to show the data in the modal for the Propostas section
-                function openModalProposta(type) {
-                  const modalDataList = document.getElementById("modalPropostaDataList");
-                  modalDataList.innerHTML = "";
-
-                  let itemsToShow = [];
-
-                  if (type === "volume") {
-                    // Get items from the Volume Proposta card
-                    itemsToShow = document.querySelectorAll(".volume-propostas-list li");
-                  } else if (type === "ticket") {
-                    // Get items from the Ticket Médio Proposta card
-                    itemsToShow = document.querySelectorAll(".ticket-medios-propostas-list li");
-                  } else if (type === "quantidade") {
-                    // Get items from the Quantidade de Propostas card
-                    itemsToShow = document.querySelectorAll(".quantidade-propostas-list li");
-                  } else if (type === "maiores") {
-                    // Get items from the Maiores Propostas card
-                    itemsToShow = document.querySelectorAll(".maiores-propostas-list li");
-                  }
-
-                  // Add only the first 5 items of the selected type
-                  itemsToShow.forEach((item, index) => {
-                    if (index < 5) {
-                      modalDataList.innerHTML += `<li>${item.innerHTML}</li>`;
-                    }
-                  });
-
-                  // Show the modal and the overlay
-                  document.getElementById("dataModalProposta").style.display = "block";
-                  document.getElementById("modalPropostaOverlay").style.display = "block";
-                }
-
-                function closeModalProposta() {
-                  document.getElementById('dataModalProposta').style.display = 'none';
-                  document.getElementById('modalPropostaOverlay').style.display = 'none';
-                }
-
-                document.addEventListener('DOMContentLoaded', fetchPropostas);
-              </script>
-
-
-              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-              <!-- Content Row -->
-             
-              <!-- -- Linha acima é fim container -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <!-- Content Row -->
+            <div class="row">
+              <!-- Acima ta o fim do segundo container -->
             </div>
-            <div class="container-fluid">
-              <hr>
-              <!-- Content Row -->
-              <div class="row align-items-center mb-4">
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <h5>Ranking em Propostas em <br><strong style="color: black;">Análise de Crédito</strong>
-                    <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
-                    <div class="total-credito">
-                      <h6 class="total-analise"></h6>
-                    </div>
-                  </h5>
+            <!-- -- Linha acima é fim container -->
+          </div>
+          <div class="container-fluid">
+            <hr>
+            <!-- Content Row -->
+            <div class="row align-items-center mb-4">
+              <div class="col-4">
+                <h5>Ranking em Propostas em <br><strong style="color: black;">Análise de Crédito</strong>
+                  <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
+                  <div class="total-credito">
+                    <h6 class="total-analise"></h6>
+                  </div>
+                </h5>
+              </div>
+              <div class="col-8">
+                <div class="filters d-flex justify-content-end">
+                  <div class="dropdown me-2">
+                    <select class="form-select" id="consultores" onchange="fetchPropostas()">
+                      <option value="consultores">Consultores</option>
+                    </select>
+                  </div>
+                  <div class="dropdown me-2">
+                    <select class="form-select" id="mes" onchange="fetchPropostas()">
+                      <option value="setembro">SETEMBRO</option>
+                      <option value="outubro" selected>OUTUBRO</option>
+                    </select>
+                  </div>
+                  <div class="dropdown">
+                    <select class="form-select" id="ano" onchange="fetchPropostas()">
+                      <option value="2024" selected>2024</option>
+                      <option value="2023">2023</option>
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                    </select>
+                  </div>
                 </div>
-                
-                <div class="col-md-9 col-11"> <!-- 9 para PC e 12 para mobile -->
-                  <div class="filters d-flex justify-content-end mb-4 flex-wrap">
-                    <div class="dropdown">
-                      <select class="form-select">
-                        <option value="consultores">Consultores</option>
-                      </select>
-                    </div>
-                    <div class="dropdown">
-                      <select class="form-select">
-                        <option value="setembro">SETEMBRO</option>
-                        <option value="outubro" selected>OUTUBRO</option>
-                      </select>
-                    </div>
-                    <div class="dropdown">
-                      <select class="form-select">
-                        <option value="2024">2024</option>
-                      </select>
-                    </div>
+              </div>
+            </div>
+
+            <div class="card-deck">
+              <div class="card" id="volume-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Volume Análise de Crédito</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalAnalise('volume')">Ver Tudo!</button>
                   </div>
                 </div>
               </div>
 
-              <div class="card-deck">
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-dark shadow h-100 py-2" id="volume-analise">
-                    <div class="card-body">
-                      <h5 class="card-title text-dark text-uppercase" style="font-size: 1rem;">Volume Análise de Crédito
-                      </h5>
-                      <hr>
-                      <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                      <hr>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalAnalise('volume')">Ver Tudo!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-info shadow h-100 py-2" id="ticket-analise">
-                    <div class="card-body">
-                      <h5 class="card-title text-info text-uppercase" style="font-size: 1rem;">Ticket Médio Análise</h5>
-                      <hr>
-                      <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                      <hr>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalAnalise('ticket')">Ver Tudo!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-success shadow h-100 py-2" id="quantidade-analise">
-                    <div class="card-body">
-                      <h5 class="card-title text-success text-uppercase" style="font-size: 1rem;">Quantidade de
-                        Propostas</h5>
-                      <hr>
-                      <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                      <hr>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalAnalise('quantidade')">Ver Tudo!</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-warning shadow h-100 py-2" id="maiores-analise">
-                    <div class="card-body">
-                      <h5 class="card-title text-warning text-uppercase" style="font-size: 1rem;">Maiores Contratos</h5>
-                      <hr>
-                      <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
-                      <hr>
-                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                      <hr>
-                      <div class="text-center">
-                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                          onclick="openModalAnalise('maiores')">Ver Tudo!</button>
-                      </div>
-                    </div>
+              <div class="card" id="ticket-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio Enviadas a Análise</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalAnalise('ticket')">Ver Tudo!</button>
                   </div>
                 </div>
               </div>
 
+              <div class="card" id="quantidade-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Propostas</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalAnalise('quantidade')">Ver Tudo!</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" id="maiores-analise" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Contratos</h5>
+                  <hr>
+                  <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                  <hr>
+                  <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                  <hr>
+                  <div class="text-center">
+                    <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                      onclick="openModalAnalise('maiores')">Ver Tudo!</button>
+                  </div>
+                </div>
+              </div>
 
               <!-- Modal para análise -->
               <div class="modal" id="dataModalAnalise" tabindex="-1" role="dialog" aria-labelledby="modalAnaliseLabel"
@@ -897,9 +869,7 @@
 
                 <div class="modal-body" style="padding: 20px;">
                   <h5 id="modalAnaliseCardTitle" style="margin-bottom: 5px; color: black; text-align: center;"></h5>
-                  <p id="modalAnaliseCardSubtitle" style="margin: 0; color: #555; text-align: center;">Enviadas a
-                    Análise
-                    em OUTUBRO
+                  <p id="modalAnaliseCardSubtitle" style="margin: 0; color: #555; text-align: center;">Enviadas a Análise em OUTUBRO
                   </p>
                   <hr>
                   <ul class="list-unstyled" id="modalAnaliseDataList">
@@ -1016,27 +986,29 @@
 
               </script>
 
+
               <!-- Html do Cadastro Proposta -->
               <div class="container-fluid">
                 <hr>
                 <!-- Content Row -->
+
                 <div class="row align-items-center mb-4">
                   <div class="col-4">
-                    <h6>Ranking em Propostas em <br>
-                      <strong style="color: black;">Cadastradas no Sistema</strong>
-                      <i class="p-ml-4 pi pi-info-circle" style="font-size: 1rem;"></i>
+                    <h6>Ranking em Propostas em <br><strong style="color: black;">Cadastradas no Sistema</strong>
+                      <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
+                      <div class="total-cadastro">
+                        <h6 class="total-cadastro"></h6>
+                      </div>
                     </h6>
-                    <h6 class="total-cadastro">propostas cadastradas no sistema</h6>
                   </div>
-                  
-                  <div class="col-md-8 col-11"> 
-                    <div class="filters d-flex justify-content-end mb-4 flex-wrap">
-                      <div class="dropdown">
+                  <div class="col-8">
+                    <div class="filters d-flex justify-content-end">
+                      <div class="dropdown me-2">
                         <select class="form-select" id="consultores" onchange="fetchPropostasCadastro()">
                           <option value="consultores">Consultores</option>
                         </select>
                       </div>
-                      <div class="dropdown">
+                      <div class="dropdown me-2">
                         <select class="form-select" id="mes" onchange="fetchPropostasCadastro()">
                           <option value="setembro">SETEMBRO</option>
                           <option value="outubro" selected>OUTUBRO</option>
@@ -1053,70 +1025,69 @@
                     </div>
                   </div>
                 </div>
-                
 
                 <div class="card-deck">
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-dark shadow h-100 py-2" id="volume-cadastros">
-                      <div class="card-body">
-                        <h5 class="card-title text-dark" style="font-size: 1rem;">Cadastrados no Sistema</h5>
-                        <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
-                        <hr>
-                        <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                        <div class="text-center">
-                          <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('volume')">Ver Tudo!</button>
-                        </div>
+                  <div class="card" id="volume-cadastros" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-size: 1rem; color: black;">Cadastrados no Sistema</h5>
+                      <hr>
+                      <p class="card-text" style="font-size: 0.9rem;">Enviadas a Análise em OUTUBRO</p>
+                      <hr>
+                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                      <hr>
+                      <div class="text-center">
+                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                          onclick="openModalCadastro('volume')">Ver Tudo!</button>
                       </div>
                     </div>
                   </div>
-                
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-info shadow h-100 py-2" id="ticket-cadastros">
-                      <div class="card-body">
-                        <h5 class="card-title text-info text-uppercase" style="font-size: 1rem;">Ticket Médio Cadastradas</h5>
-                        <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
-                        <hr>
-                        <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                        <div class="text-center">
-                          <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('ticket')">Ver Tudo!</button>
-                        </div>
+
+                  <div class="card" id="ticket-cadastros" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-size: 1rem; color: black;">Ticket Médio Cadastradas no Sistema
+                      </h5>
+                      <hr>
+                      <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
+                      <hr>
+                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                      <hr>
+                      <div class="text-center">
+                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                          onclick="openModalCadastro('ticket')">Ver Tudo!</button>
                       </div>
                     </div>
                   </div>
-                
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-success shadow h-100 py-2" id="quantidade-cadastros">
-                      <div class="card-body">
-                        <h5 class="card-title text-success text-uppercase" style="font-size: 1rem;">Quantidade de Propostas</h5>
-                        <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
-                        <hr>
-                        <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                        <div class="text-center">
-                          <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('quantidade')">Ver Tudo!</button>
-                        </div>
+
+                  <div class="card" id="quantidade-cadastros" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-size: 1rem; color: black;">Quantidade de Propostas</h5>
+                      <hr>
+                      <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
+                      <hr>
+                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                      <hr>
+                      <div class="text-center">
+                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                          onclick="openModalCadastro('quantidade')">Ver Tudo!</button>
                       </div>
                     </div>
                   </div>
-                
-                  <div class="col-xl-3 col-md-6 mb-4">
-                    <div class="card border-left-warning shadow h-100 py-2" id="maiores-cadastros">
-                      <div class="card-body">
-                        <h5 class="card-title text-warning text-uppercase" style="font-size: 1rem;">Maiores Contratos</h5>
-                        <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
-                        <hr>
-                        <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
-                        <div class="text-center">
-                          <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('maiores')">Ver Tudo!</button>
-                        </div>
+
+                  <div class="card" id="maiores-cadastros" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title" style="font-size: 1rem; color: black;">Maiores Contratos</h5>
+                      <hr>
+                      <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
+                      <hr>
+                      <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
+                      <hr>
+                      <div class="text-center">
+                        <button style="cursor: pointer; color: #808080; text-decoration: underline;"
+                          onclick="openModalCadastro('maiores')">Ver Tudo!</button>
                       </div>
                     </div>
                   </div>
                 </div>
-                
 
 
                 <!-- Modal para cadastro -->
@@ -1131,11 +1102,8 @@
                   </div>
 
                   <div class="modal-body" style="padding: 20px;">
-                    <h5 id="modalCadastroCardTitle" style="margin-bottom: 5px; color: black; text-align: center;">
-                    </h5>
-                    <p id="modalCadastroCardSubtitle" style="margin: 0; color: #555; text-align: center;">
-                      Cadastradas no
-                      Sistema em OUTUBRO
+                    <h5 id="modalCadastroCardTitle" style="margin-bottom: 5px; color: black; text-align: center;"></h5>
+                    <p id="modalCadastroCardSubtitle" style="margin: 0; color: #555; text-align: center;">Cadastradas no Sistema em OUTUBRO
                     </p>
                     <hr>
                     <ul class="list-unstyled" id="modalCadastroDataList">
@@ -1343,7 +1311,7 @@
 
   <script>
     async function fetchPropostas() {
-      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostaPainel';
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
       const username = 'dba';
       const password = 'Yar05710';
       const headers = new Headers({
@@ -1415,58 +1383,53 @@
         });
 
         // Adicionando ticket médio (limite a 5)
-        const ticketMedioList = document.querySelector('.ticket-medios-list');
+        const ticketMedioList = document.querySelector('.card:nth-child(2) .list-unstyled');
         ticketMedioList.innerHTML = '';
 
         const ticketMedioPorConsultor = {};
 
-        // Verifique se filtraData contém dados
-        if (Array.isArray(filtraData) && filtraData.length > 0) {
-          // Soma o faturamento e conta o número de vendas por consultor
-          filtraData.forEach(item => {
-            const consultor = item.consultorMonetare.substring(0, 10);
-            if (!ticketMedioPorConsultor[consultor]) {
-              ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
-            }
-            ticketMedioPorConsultor[consultor].total += item.valor;
-            ticketMedioPorConsultor[consultor].count += 1;
-          });
+        // Soma o faturamento e conta o número de vendas por consultor
+        filtraData.forEach(item => {
+          const consultor = item.consultorMonetare.substring(0, 10);
+          if (!ticketMedioPorConsultor[consultor]) {
+            ticketMedioPorConsultor[consultor] = { total: 0, count: 0 };
+          }
+          ticketMedioPorConsultor[consultor].total += item.valor;
+          ticketMedioPorConsultor[consultor].count += 1;
+        });
 
-          // Calcula ticket médio e cria um array para ordenação
-          const ticketMedioArray = Object.keys(ticketMedioPorConsultor).map(consultor => {
-            const total = ticketMedioPorConsultor[consultor].total;
-            const count = ticketMedioPorConsultor[consultor].count;
-            const ticketMedio = count > 0 ? total / count : 0;
-            return { consultor, ticketMedio };
-          });
+        // Calcula ticket médio e cria um array para ordenação
+        const ticketMedioArray = Object.keys(ticketMedioPorConsultor).map(consultor => {
+          const total = ticketMedioPorConsultor[consultor].total;
+          const count = ticketMedioPorConsultor[consultor].count;
+          const ticketMedio = count > 0 ? total / count : 0;
+          return { consultor, ticketMedio };
+        });
 
-          // Ordena por ticket médio (do maior para o menor) e limita a 5
-          const consultoresOrdenadosPorTicket = ticketMedioArray.sort((a, b) => b.ticketMedio - a.ticketMedio).slice(0, 5);
+        // Ordena por ticket médio (do maior para o menor) e limita a 5
+        const consultoresOrdenadosPorTicket = ticketMedioArray.sort((a, b) => b.ticketMedio - a.ticketMedio).slice(0, 5);
 
-          consultoresOrdenadosPorTicket.forEach((item, index) => {
-            const { consultor, ticketMedio } = item;
+        consultoresOrdenadosPorTicket.forEach((item, index) => {
+          const { consultor, ticketMedio } = item;
 
-            const ticketMedioItem = `
-            <li class="d-flex align-items-center">
-                <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
-                <div style="flex-grow: 1; text-align: right;">
-                    <strong style="color: black;">${index + 1}º ${consultor}</strong>
-                    <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
-                        ${formatarValor(ticketMedio)}
-                    </span>
-                </div>
-            </li>
-        `;
-            ticketMedioList.innerHTML += ticketMedioItem;
-          });
-        } else {
-          console.error('Nenhum dado disponível para processar.');
-        }
+          const ticketMedioItem = `
+                <li class="d-flex align-items-center">
+                    <img src="img/undraw_profile.svg" alt="${consultor}" style="width: 30px; height: 30px; margin-right: 5px;">
+                    <div style="flex-grow: 1; text-align: right;">
+                        <strong style="color: black;">${index + 1}º ${consultor}</strong>
+                        <span class="badge" style="background-color: #a8e6cf; color: rgb(0, 0, 0); display: inline-block; margin-top: 10px;">
+                            ${formatarValor(ticketMedio)}
+                        </span>
+                    </div>
+                </li>
+            `;
+          ticketMedioList.innerHTML += ticketMedioItem;
+        });
 
 
         // Adiciona dados ao card de quantidade de contratos (limite a 5)
         // Adiciona dados ao card de quantidade de contratos (limite a 5)
-        const quantidadeContratosList = document.querySelector('.contratos-list');
+        const quantidadeContratosList = document.querySelector('.card:nth-child(3) .list-unstyled');
         quantidadeContratosList.innerHTML = '';
         const quantidadePorConsultor = {};
 
@@ -1502,7 +1465,7 @@
 
         // Adiciona dados ao card de maiores contratos (limite a 5)
 
-        const maioresContratosList = document.querySelector('.maiores-contratos-list');
+        const maioresContratosList = document.querySelector('.card:nth-child(4) .list-unstyled');
         maioresContratosList.innerHTML = '';
         const maioresContratos = filtraData.sort((a, b) => b.valor - a.valor);
 
@@ -1535,7 +1498,6 @@
           }
         });
 
-
       } catch (error) {
         console.error('Erro:', error);
       }
@@ -1549,7 +1511,7 @@
   <!-- Script para o Ranking de Propostas  Crédito Aprovado -->
   <script>
     async function fetchPropostas() {
-      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostaPainel';
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
       const username = 'dba';
       const password = 'Yar05710';
       const headers = new Headers({
@@ -1726,7 +1688,7 @@
   <!-- // Script para Anális de credito -->
   <script>
     async function fetchPropostas() {
-      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostaPainel';
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
       const username = 'dba';
       const password = 'Yar05710';
       const headers = new Headers({
@@ -1901,7 +1863,7 @@
   <!-- Script cadastros no sistema -->
   <script>
     async function fetchPropostasCadastro() {
-      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostaPainel';
+      const url = 'https://monetare-hom.sydle.one/api/1/main/parceiro/AreaParceiro/obterPropostasDash';
       const username = 'dba';
       const password = 'Yar05710';
       const headers = new Headers({
