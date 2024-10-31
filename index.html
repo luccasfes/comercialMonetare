@@ -538,7 +538,7 @@
               <hr>
               <!-- Content Row -->
               <div class="row align-items-center mb-4">
-                <div class="col-xl-3 col-md-6 mb-4">                 
+                <div class="col-xl-3 col-md-6 mb-4">
                   <h5>Ranking em Propostas com <br><strong style="color: black;">Crédito Aprovado</strong>
                     <i class="p-ml-4 pi pi-info-circle" data-v-17e9e9cf="" style="font-size: 1rem;"></i>
                   </h5>
@@ -773,7 +773,7 @@
 
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
               <!-- Content Row -->
-             
+
               <!-- -- Linha acima é fim container -->
             </div>
             <div class="container-fluid">
@@ -788,7 +788,7 @@
                     </div>
                   </h5>
                 </div>
-                
+
                 <div class="col-md-9 col-11"> <!-- 9 para PC e 12 para mobile -->
                   <div class="filters d-flex justify-content-end mb-4 flex-wrap">
                     <div class="dropdown">
@@ -1028,8 +1028,8 @@
                     </h6>
                     <h6 class="total-cadastro">propostas cadastradas no sistema</h6>
                   </div>
-                  
-                  <div class="col-md-8 col-11"> 
+
+                  <div class="col-md-8 col-11">
                     <div class="filters d-flex justify-content-end mb-4 flex-wrap">
                       <div class="dropdown">
                         <select class="form-select" id="consultores" onchange="fetchPropostasCadastro()">
@@ -1053,7 +1053,7 @@
                     </div>
                   </div>
                 </div>
-                
+
 
                 <div class="card-deck">
                   <div class="col-xl-3 col-md-6 mb-4">
@@ -1065,58 +1065,61 @@
                         <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                         <div class="text-center">
                           <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('volume')">Ver Tudo!</button>
+                            onclick="openModalCadastro('volume')">Ver Tudo!</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                
+
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-info shadow h-100 py-2" id="ticket-cadastros">
                       <div class="card-body">
-                        <h5 class="card-title text-info text-uppercase" style="font-size: 1rem;">Ticket Médio Cadastradas</h5>
+                        <h5 class="card-title text-info text-uppercase" style="font-size: 1rem;">Ticket Médio
+                          Cadastradas</h5>
                         <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
                         <hr>
                         <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                         <div class="text-center">
                           <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('ticket')">Ver Tudo!</button>
+                            onclick="openModalCadastro('ticket')">Ver Tudo!</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                
+
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-success shadow h-100 py-2" id="quantidade-cadastros">
                       <div class="card-body">
-                        <h5 class="card-title text-success text-uppercase" style="font-size: 1rem;">Quantidade de Propostas</h5>
+                        <h5 class="card-title text-success text-uppercase" style="font-size: 1rem;">Quantidade de
+                          Propostas</h5>
                         <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
                         <hr>
                         <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                         <div class="text-center">
                           <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('quantidade')">Ver Tudo!</button>
+                            onclick="openModalCadastro('quantidade')">Ver Tudo!</button>
                         </div>
                       </div>
                     </div>
                   </div>
-                
+
                   <div class="col-xl-3 col-md-6 mb-4">
                     <div class="card border-left-warning shadow h-100 py-2" id="maiores-cadastros">
                       <div class="card-body">
-                        <h5 class="card-title text-warning text-uppercase" style="font-size: 1rem;">Maiores Contratos</h5>
+                        <h5 class="card-title text-warning text-uppercase" style="font-size: 1rem;">Maiores Contratos
+                        </h5>
                         <p class="card-text" style="font-size: 0.9rem;">Cadastradas no Sistema em OUTUBRO</p>
                         <hr>
                         <ul class="list-unstyled" style="font-size: 0.9rem; margin-bottom: 1rem;"></ul>
                         <div class="text-center">
                           <button style="cursor: pointer; color: #808080; text-decoration: underline;"
-                                  onclick="openModalCadastro('maiores')">Ver Tudo!</button>
+                            onclick="openModalCadastro('maiores')">Ver Tudo!</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                
+
 
 
                 <!-- Modal para cadastro -->
@@ -2133,7 +2136,13 @@
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+
+    var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches; 
+    if (isDarkMode)
+     { document.documentElement.setAttribute('style', 'background-color: white; color: black;'); }
+
+  </script>
 </body>
 
 </html>
